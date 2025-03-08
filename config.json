@@ -1,0 +1,15 @@
+{
+    "openai": {
+        "api_key": "la tua chiave di OpenAI",
+        "models": ["gpt-3.5-turbo", "gpt-4o-mini"]
+    },
+    "anthropic": {
+        "api_key": "",
+        "models": ["claude-3"]
+    },
+    "analyzer": {
+        "provider": "openai",
+        "model": "gpt-4o",
+        "system_prompt": "You are an expert evaluator tasked with determining if a response correctly answers a given question. Evaluate the response objectively and provide a clear yes/no judgment with a brief explanation."
+    }
+}

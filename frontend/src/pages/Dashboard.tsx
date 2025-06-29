@@ -117,7 +117,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigateToEditor }) => {
           <div className="text-red-500 text-xl mb-4">⚠️</div>
           <p className="text-gray-600 mb-4">{error}</p>
           <button
-            onClick={loadData}
+            onClick={() => loadData()}
             className="bg-primary-500 text-white px-4 py-2 rounded hover:bg-primary-600"
           >
             Retry
@@ -219,7 +219,7 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigateToEditor }) => {
               Run some evaluations first to see results here
             </p>
             <button
-              onClick={loadData}
+              onClick={() => loadData()}
               className="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 transition-colors"
             >
               Check for New Data

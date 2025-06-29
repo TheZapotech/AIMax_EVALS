@@ -7,7 +7,11 @@ import EvaluationTable from '../components/EvaluationTable';
 import Charts from '../components/Charts';
 import EvaluationDetail from '../components/EvaluationDetail';
 
-const Dashboard: React.FC = () => {
+interface DashboardProps {
+  onNavigateToEditor: () => void;
+}
+
+const Dashboard: React.FC<DashboardProps> = ({ onNavigateToEditor }) => {
   const [evaluations, setEvaluations] = useState<EvaluationResult[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -23,11 +27,11 @@ const Dashboard: React.FC = () => {
     loadData();
   }, []);
 
-  const loadData = async () => {
+  const loadData = async (forceReload: boolean = false) => {
     try {
       setLoading(true);
       const dataLoader = DataLoader.getInstance();
-      const data = await dataLoader.loadEvaluations();
+      const data = await dataLoader.loadEvaluations(forceReload);
       setEvaluations(data);
       calculateDashboardStats(data);
       setError(null);
@@ -148,7 +152,13 @@ const Dashboard: React.FC = () => {
             </div>
             <div className="flex items-center space-x-4">
               <button
-                onClick={loadData}
+                onClick={onNavigateToEditor}
+                className="bg-purple-500 text-white px-4 py-2 rounded-lg hover:bg-purple-600 transition-colors"
+              >
+                📝 Test Editor
+              </button>
+              <button
+                onClick={() => loadData(true)}
                 className="bg-primary-500 text-white px-4 py-2 rounded-lg hover:bg-primary-600 transition-colors"
               >
                 Refresh Data

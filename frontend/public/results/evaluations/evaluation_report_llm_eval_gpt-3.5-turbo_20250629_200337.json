@@ -1,0 +1,62 @@
+{
+  "evaluation_id": "llm_eval_20250629_200334",
+  "timestamp": "2025-06-29T20:03:34.742571+00:00",
+  "provider": "openai",
+  "model": "gpt-3.5-turbo",
+  "analyzer": {
+    "provider": "openai",
+    "model": "gpt-4o"
+  },
+  "test_suite_id": "mixed_general_knowledge_v1",
+  "results": [
+    {
+      "test_id": "lang_001",
+      "prompt": "Translate this text into French: 'The weather is beautiful today, and I plan to go for a walk in the park.'",
+      "response": "Le temps est beau aujourd'hui, et je prévois d'aller me promener dans le parc.",
+      "expected": "Le temps est magnifique aujourd'hui, et je prévois de faire une promenade dans le parc.",
+      "evaluation": {
+        "score": 2.0,
+        "max_score": 2.0,
+        "evaluation_type": "llm_judge",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The actual response accurately translates the English sentence into French, conveying the same meaning. The phrase \"Le temps est beau aujourd'hui, et je prévois d'aller me promener dans le parc\" captures the essence of the original sentence, even though it uses slightly different wording. The key elements, such as the weather being beautiful and the intention to walk in the park, are present and correctly translated.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The actual response accurately translates the English sentence into French, conveying the same meaning. The phrase \"Le temps est beau aujourd'hui, et je prévois d'aller me promener dans le parc\" captures the essence of the original sentence, even though it uses slightly different wording. The key elements, such as the weather being beautiful and the intention to walk in the park, are present and correctly translated.",
+          "response_time": 1.504672,
+          "tokens": {
+            "prompt": 373,
+            "completion": 90,
+            "total": 463
+          }
+        },
+        "timestamp": "2025-06-29T20:03:37.179571+00:00"
+      },
+      "category": "language",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "Le temps est beau aujourd'hui, et je prévois d'aller me promener dans le parc.",
+        "model": "gpt-3.5-turbo",
+        "tokens": {
+          "prompt": 32,
+          "completion": 22,
+          "total": 54
+        },
+        "response_time": 0.914707,
+        "timestamp": "2025-06-29T20:03:35.657295+00:00"
+      }
+    }
+  ],
+  "summary": {
+    "total_tests": 1,
+    "total_score": 2.0,
+    "max_possible_score": 2.0,
+    "accuracy": 100.0,
+    "total_tokens": 54,
+    "total_response_time": 0.914707,
+    "analyzer_tokens": 463,
+    "analyzer_response_time": 1.504672,
+    "average_response_time": 0.914707,
+    "average_analyzer_response_time": 1.504672
+  }
+}

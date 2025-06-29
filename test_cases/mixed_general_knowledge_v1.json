@@ -1,0 +1,213 @@
+{
+  "test_suite_id": "mixed_general_knowledge_v1",
+  "description": "Mixed-language test suite covering maths, code, DB, ML and general science topics.",
+  "language": "mixed",
+  "test_cases": [
+    {
+      "test_id": "math_001",
+      "prompt": "Prove that the sum of the angles in a triangle is always 180 degrees using a geometric explanation.",
+      "expected": "180, triangle, straight line",
+      "evaluation_type": "key_elements",
+      "category": "mathematics",
+      "difficulty": "medium",
+      "weight": 3,
+      "language": "en",
+      "evaluation_hint": {
+        "type": "contains_all_words",
+        "values": [
+          "180",
+          "triangle",
+          "straight",
+          "line"
+        ],
+        "case_sensitive": false
+      }
+    },
+    {
+      "test_id": "lang_001",
+      "prompt": "Translate this text into French: 'The weather is beautiful today, and I plan to go for a walk in the park.'",
+      "expected": "Le temps est magnifique aujourd'hui, et je prévois de faire une promenade dans le parc.",
+      "evaluation_type": "exact_match",
+      "category": "language",
+      "difficulty": "easy",
+      "weight": 2,
+      "language": "en",
+      "evaluation_hint": {
+        "type": "contains_all_words",
+        "value": "magnifique",
+        "case_sensitive": false,
+        "values": [
+          "temps",
+          "beau",
+          "promenade",
+          "parc"
+        ]
+      }
+    },
+    {
+      "test_id": "prog_001",
+      "prompt": "Write a Python function that checks if a string is a palindrome.",
+      "expected": "def is_palindrome(s): return s == s[::-1]",
+      "evaluation_type": "functional_equivalence",
+      "category": "programming",
+      "difficulty": "medium",
+      "weight": 3,
+      "language": "en",
+      "evaluation_hint": {
+        "type": "code_output",
+        "test_cases": [
+          {
+            "input": "\"madam\"",
+            "expected_output": "True"
+          },
+          {
+            "input": "\"hello\"",
+            "expected_output": "False"
+          }
+        ]
+      }
+    },
+    {
+      "test_id": "stats_001",
+      "prompt": "Explain the difference between 'correlation' and 'causation' in the context of data science.",
+      "expected": "correlation, causation, relationship, cause",
+      "evaluation_type": "key_elements",
+      "category": "statistics",
+      "difficulty": "medium",
+      "weight": 2.5,
+      "language": "en",
+      "evaluation_hint": {
+        "type": "contains_all_words",
+        "values": [
+          "correlation",
+          "causation",
+          "relationship",
+          "cause"
+        ],
+        "case_sensitive": false
+      }
+    },
+    {
+      "test_id": "math_002",
+      "prompt": "Solve the integral in python with no libraries: ∫(2x^2 + 3x + 1) dx.",
+      "expected": "x^3, x^2, C",
+      "evaluation_type": "key_elements",
+      "category": "mathematics",
+      "difficulty": "hard",
+      "weight": 3.5,
+      "language": "en",
+      "evaluation_hint": {
+        "type": "contains_all_words",
+        "values": [
+          "x^3",
+          "x^2",
+          "C"
+        ],
+        "case_sensitive": false
+      }
+    },
+    {
+      "test_id": "db_001",
+      "prompt": "In a relational database, explain the concept of normalization and list its advantages.",
+      "expected": "redundancy, integrity, consistency",
+      "evaluation_type": "key_elements",
+      "category": "database",
+      "difficulty": "hard",
+      "weight": 3,
+      "language": "en",
+      "evaluation_hint": {
+        "type": "contains_all_words",
+        "values": [
+          "redundancy",
+          "integrity",
+          "consistency"
+        ],
+        "case_sensitive": false
+      }
+    },
+    {
+      "test_id": "db_002",
+      "prompt": "Scrivi una query SQL che restituisca i dipendenti che guadagnano più di 50.000 euro e lavorano nel dipartimento 'Vendite'.",
+      "expected": "dipendenti, stipendio > 50000, Vendite",
+      "evaluation_type": "contains_all",
+      "category": "database",
+      "difficulty": "medium",
+      "weight": 2.5,
+      "language": "it",
+      "evaluation_hint": {
+        "type": "contains_all_words",
+        "values": [
+          "dipendenti",
+          "stipendio",
+          "50000",
+          "Vendite"
+        ],
+        "case_sensitive": false
+      }
+    },
+    {
+      "test_id": "algo_001",
+      "prompt": "Explain the Big-O complexity of a binary search algorithm.",
+      "expected": "O(log n)",
+      "evaluation_type": "contains_word",
+      "category": "algorithms",
+      "difficulty": "hard",
+      "weight": 3,
+      "language": "en",
+      "evaluation_hint": {
+        "type": "contains_word",
+        "value": "O(log n)",
+        "case_sensitive": false
+      }
+    },
+    {
+      "test_id": "ml_001",
+      "prompt": "Describe the process of backpropagation in a neural network.",
+      "expected": "gradient, loss, weights",
+      "evaluation_type": "key_elements",
+      "category": "machine_learning",
+      "difficulty": "hard",
+      "weight": 3.5,
+      "language": "en",
+      "evaluation_hint": {
+        "type": "contains_all_words",
+        "values": [
+          "gradient",
+          "loss",
+          "weights"
+        ],
+        "case_sensitive": false
+      }
+    },
+    {
+      "test_id": "physics_001",
+      "prompt": "Spiega la teoria della relatività ristretta di Einstein in termini semplici.",
+      "expected": "leggi fisiche, velocità della luce, costante",
+      "evaluation_type": "key_elements",
+      "category": "physics",
+      "difficulty": "hard",
+      "weight": 3,
+      "language": "it",
+      "evaluation_hint": {
+        "type": "contains_all_words",
+        "values": [
+          "leggi",
+          "velocità",
+          "luce",
+          "costante"
+        ],
+        "case_sensitive": false
+      }
+    }
+  ],
+  "metadata": {
+    "created_at": "2025-06-29T18:00:00Z",
+    "version": "1.0",
+    "total_weight": 29,
+    "difficulty_distribution": {
+      "easy": 1,
+      "medium": 4,
+      "hard": 5
+    }
+  }
+}

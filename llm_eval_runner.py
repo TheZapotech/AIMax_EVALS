@@ -9,6 +9,7 @@ import os
 import json
 import asyncio
 import argparse
+import glob
 from datetime import datetime, UTC
 from typing import Dict, Any, List
 from backend.evaluator import LLMEvaluator
@@ -338,6 +339,44 @@ async def main():
             print(f"Average Analyzer Time: {results['summary']['average_analyzer_response_time']:.2f}s")
     
     print("\nEvaluation complete!")
+    
+    # Update frontend file list automatically
+    update_frontend_file_list()
+
+def update_frontend_file_list():
+    """Update the frontend file list after evaluation completion."""
+    try:
+        # Path to the evaluations directory
+        evaluations_dir = "frontend/public/results/evaluations"
+        api_file = "frontend/public/api/evaluations/list.json"
+        
+        # Create directories if they don't exist
+        os.makedirs("frontend/public/api/evaluations", exist_ok=True)
+        
+        # Find all JSON evaluation files
+        if os.path.exists(evaluations_dir):
+            pattern = os.path.join(evaluations_dir, "evaluation_report_*.json")
+            files = glob.glob(pattern)
+            # Extract just the filenames
+            filenames = [os.path.basename(f) for f in files]
+            filenames.sort(reverse=True)  # Most recent first
+        else:
+            filenames = []
+        
+        # Update the list file
+        file_list = {
+            "files": filenames,
+            "count": len(filenames),
+            "last_updated": datetime.now(UTC).isoformat()
+        }
+        
+        with open(api_file, 'w') as f:
+            json.dump(file_list, f, indent=2)
+        
+        print(f"✓ Updated frontend file list with {len(filenames)} evaluation files")
+        
+    except Exception as e:
+        print(f"Warning: Failed to update frontend file list: {e}")
 
 if __name__ == "__main__":
     asyncio.run(main())

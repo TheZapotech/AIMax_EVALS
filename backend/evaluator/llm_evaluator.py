@@ -322,6 +322,17 @@ For key_elements evaluation:
 - Give partial credit if some but not all key elements are present
 - The response doesn't need to match exactly, but should demonstrate understanding of the key concepts
 """
+        elif evaluation_type == "llm_judge":
+            evaluation_prompt += """
+For llm_judge evaluation:
+- Use your natural language understanding to determine if the response adequately answers the question
+- Consider semantic meaning, context, and appropriateness rather than exact matching
+- For translations: check if the meaning is correctly conveyed in the target language
+- For explanations: assess if the response demonstrates understanding of the concept
+- For creative tasks: evaluate if the response fulfills the intent of the prompt
+- Give partial credit for responses that are partially correct or demonstrate some understanding
+- You may ignore minor grammatical errors or stylistic differences if the core meaning is correct
+"""
 
         return evaluation_prompt
     

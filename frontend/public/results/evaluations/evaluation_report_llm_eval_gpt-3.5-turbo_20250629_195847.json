@@ -1,0 +1,284 @@
+{
+  "evaluation_id": "llm_eval_20250629_195825",
+  "timestamp": "2025-06-29T19:58:25.611564+00:00",
+  "provider": "openai",
+  "model": "gpt-3.5-turbo",
+  "analyzer": {
+    "provider": "openai",
+    "model": "gpt-4o"
+  },
+  "test_suite_id": "sample_basic_knowledge",
+  "results": [
+    {
+      "test_id": "exact_001",
+      "prompt": "What is the capital of France? Only the name of the city.",
+      "response": "Paris",
+      "expected": "Paris",
+      "evaluation": {
+        "score": 1.0,
+        "max_score": 1.0,
+        "evaluation_type": "exact_match",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The actual response \"Paris\" matches the expected answer exactly, fulfilling the exact_match requirement.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The actual response \"Paris\" matches the expected answer exactly, fulfilling the exact_match requirement.",
+          "response_time": 1.264545,
+          "tokens": {
+            "prompt": 253,
+            "completion": 27,
+            "total": 280
+          }
+        },
+        "timestamp": "2025-06-29T19:58:28.482601+00:00"
+      },
+      "category": "geography",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "Paris",
+        "model": "gpt-3.5-turbo",
+        "tokens": {
+          "prompt": 21,
+          "completion": 1,
+          "total": 22
+        },
+        "response_time": 1.585643,
+        "timestamp": "2025-06-29T19:58:27.197228+00:00"
+      }
+    },
+    {
+      "test_id": "elements_001",
+      "prompt": "List the three primary colors.",
+      "response": "1. Red\n2. Blue\n3. Yellow",
+      "expected": "red, blue, yellow",
+      "evaluation": {
+        "score": 2.0,
+        "max_score": 2.0,
+        "evaluation_type": "contains_all",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The actual response contains all the required elements: \"red,\" \"blue,\" and \"yellow,\" regardless of the format or order. The evaluation type \"contains_all\" is satisfied as all the primary colors are listed.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The actual response contains all the required elements: \"red,\" \"blue,\" and \"yellow,\" regardless of the format or order. The evaluation type \"contains_all\" is satisfied as all the primary colors are listed.",
+          "response_time": 1.481021,
+          "tokens": {
+            "prompt": 236,
+            "completion": 52,
+            "total": 288
+          }
+        },
+        "timestamp": "2025-06-29T19:58:30.842322+00:00"
+      },
+      "category": "general",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "1. Red\n2. Blue\n3. Yellow",
+        "model": "gpt-3.5-turbo",
+        "tokens": {
+          "prompt": 13,
+          "completion": 11,
+          "total": 24
+        },
+        "response_time": 0.849538,
+        "timestamp": "2025-06-29T19:58:29.332196+00:00"
+      }
+    },
+    {
+      "test_id": "code_001",
+      "prompt": "Write a Python function that checks if a number is even.",
+      "response": "def is_even(num):\n    if num % 2 == 0:\n        return True\n    else:\n        return False\n\n# Example usage\nprint(is_even(4))  # Output: True\nprint(is_even(7))  # Output: False",
+      "expected": "def is_even(n): return n % 2 == 0",
+      "evaluation": {
+        "score": 3.0,
+        "max_score": 3.0,
+        "evaluation_type": "functional_equivalence",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The actual response provides a function `is_even` that correctly checks if a number is even by returning `True` if the number is divisible by 2 and `False` otherwise. This is functionally equivalent to the expected answer, as both implementations will produce the same outputs for the same inputs. The example usage in the response also correctly demonstrates the function's behavior.",
+          "raw_response": "CORRECT: Yes\nEXPLANATION: The actual response provides a function `is_even` that correctly checks if a number is even by returning `True` if the number is divisible by 2 and `False` otherwise. This is functionally equivalent to the expected answer, as both implementations will produce the same outputs for the same inputs. The example usage in the response also correctly demonstrates the function's behavior.",
+          "response_time": 1.731144,
+          "tokens": {
+            "prompt": 317,
+            "completion": 83,
+            "total": 400
+          }
+        },
+        "timestamp": "2025-06-29T19:58:33.722544+00:00"
+      },
+      "category": "programming",
+      "difficulty": "medium",
+      "llm_metrics": {
+        "content": "def is_even(num):\n    if num % 2 == 0:\n        return True\n    else:\n        return False\n\n# Example usage\nprint(is_even(4))  # Output: True\nprint(is_even(7))  # Output: False",
+        "model": "gpt-3.5-turbo",
+        "tokens": {
+          "prompt": 19,
+          "completion": 53,
+          "total": 72
+        },
+        "response_time": 1.120097,
+        "timestamp": "2025-06-29T19:58:31.962454+00:00"
+      }
+    },
+    {
+      "test_id": "tf_001",
+      "prompt": "True or False only: Water boils at 100 degrees Celsius at sea level.",
+      "response": "True",
+      "expected": "true",
+      "evaluation": {
+        "score": 1.0,
+        "max_score": 1.0,
+        "evaluation_type": "exact_match",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The actual response \"True\" matches the expected answer \"true\" when case is ignored, which is acceptable for an exact match evaluation in a true/false question.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The actual response \"True\" matches the expected answer \"true\" when case is ignored, which is acceptable for an exact match evaluation in a true/false question.",
+          "response_time": 1.335734,
+          "tokens": {
+            "prompt": 255,
+            "completion": 42,
+            "total": 297
+          }
+        },
+        "timestamp": "2025-06-29T19:58:35.572302+00:00"
+      },
+      "category": "science",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "True",
+        "model": "gpt-3.5-turbo",
+        "tokens": {
+          "prompt": 23,
+          "completion": 1,
+          "total": 24
+        },
+        "response_time": 0.491347,
+        "timestamp": "2025-06-29T19:58:34.213937+00:00"
+      }
+    },
+    {
+      "test_id": "key_001",
+      "prompt": "Explain the concept of photosynthesis. Include: sunlight, chlorophyll, and glucose.",
+      "response": "Photosynthesis is the process by which green plants, algae, and certain bacteria convert light energy from the sun into chemical energy in the form of glucose. This process is essential for the survival of plants and other organisms that depend on them for food.\n\nDuring photosynthesis, plants use a green pigment called chlorophyll, which is found in chloroplasts within their cells, to capture sunlight. The chlorophyll absorbs light energy and uses it to convert carbon dioxide (CO2) from the air and water (H2O) from the soil into glucose (C6H12O6) and oxygen (O2).\n\nThe overall chemical equation for photosynthesis is:\n\n6CO2 + 6H2O + light energy → C6H12O6 + 6O2\n\nIn this equation, carbon dioxide and water are converted into glucose and oxygen using the energy from sunlight. The glucose produced during photosynthesis is used by plants as a source of energy for growth and development. Additionally, oxygen is released into the atmosphere as a byproduct of photosynthesis, which is essential for the survival of most living organisms.\n\nOverall, photosynthesis is a vital process that allows plants to convert sunlight into energy-rich glucose, providing food for themselves and other organisms in the food chain.",
+      "expected": "sunlight, chlorophyll, glucose",
+      "evaluation": {
+        "score": 3.0,
+        "max_score": 3.0,
+        "evaluation_type": "key_elements",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The response correctly explains the concept of photosynthesis and includes all the key elements: sunlight, chlorophyll, and glucose. It describes how chlorophyll captures sunlight to convert carbon dioxide and water into glucose, fulfilling the requirement to cover these key elements.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The response correctly explains the concept of photosynthesis and includes all the key elements: sunlight, chlorophyll, and glucose. It describes how chlorophyll captures sunlight to convert carbon dioxide and water into glucose, fulfilling the requirement to cover these key elements.",
+          "response_time": 2.085208,
+          "tokens": {
+            "prompt": 508,
+            "completion": 58,
+            "total": 566
+          }
+        },
+        "timestamp": "2025-06-29T19:58:42.152510+00:00"
+      },
+      "category": "science",
+      "difficulty": "medium",
+      "llm_metrics": {
+        "content": "Photosynthesis is the process by which green plants, algae, and certain bacteria convert light energy from the sun into chemical energy in the form of glucose. This process is essential for the survival of plants and other organisms that depend on them for food.\n\nDuring photosynthesis, plants use a green pigment called chlorophyll, which is found in chloroplasts within their cells, to capture sunlight. The chlorophyll absorbs light energy and uses it to convert carbon dioxide (CO2) from the air and water (H2O) from the soil into glucose (C6H12O6) and oxygen (O2).\n\nThe overall chemical equation for photosynthesis is:\n\n6CO2 + 6H2O + light energy → C6H12O6 + 6O2\n\nIn this equation, carbon dioxide and water are converted into glucose and oxygen using the energy from sunlight. The glucose produced during photosynthesis is used by plants as a source of energy for growth and development. Additionally, oxygen is released into the atmosphere as a byproduct of photosynthesis, which is essential for the survival of most living organisms.\n\nOverall, photosynthesis is a vital process that allows plants to convert sunlight into energy-rich glucose, providing food for themselves and other organisms in the food chain.",
+        "model": "gpt-3.5-turbo",
+        "tokens": {
+          "prompt": 26,
+          "completion": 257,
+          "total": 283
+        },
+        "response_time": 4.47208,
+        "timestamp": "2025-06-29T19:58:40.044415+00:00"
+      }
+    },
+    {
+      "test_id": "regex_001",
+      "prompt": "Write a valid email address of a user called john doe working at example.com. Nothing else.",
+      "response": "john.doe@example.com",
+      "expected": "john.doe@example.com",
+      "evaluation": {
+        "score": 2.0,
+        "max_score": 2.0,
+        "evaluation_type": "exact_match",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The actual response \"john.doe@example.com\" matches the expected answer exactly, fulfilling the requirements of the exact_match evaluation type.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The actual response \"john.doe@example.com\" matches the expected answer exactly, fulfilling the requirements of the exact_match evaluation type.",
+          "response_time": 1.362549,
+          "tokens": {
+            "prompt": 315,
+            "completion": 35,
+            "total": 350
+          }
+        },
+        "timestamp": "2025-06-29T19:58:44.052661+00:00"
+      },
+      "category": "general",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "john.doe@example.com",
+        "model": "gpt-3.5-turbo",
+        "tokens": {
+          "prompt": 26,
+          "completion": 5,
+          "total": 31
+        },
+        "response_time": 0.507579,
+        "timestamp": "2025-06-29T19:58:42.660134+00:00"
+      }
+    },
+    {
+      "test_id": "multi_001",
+      "prompt": "Which of these is a mammal? A) Snake B) Eagle C) Dolphin D) Lizard",
+      "response": "C) Dolphin",
+      "expected": "C",
+      "evaluation": {
+        "score": 1.0,
+        "max_score": 1.0,
+        "evaluation_type": "contains_word",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The actual response \"C) Dolphin\" contains the word \"Dolphin,\" which matches the expected answer \"C\" and satisfies the evaluation type \"contains_word\" with the value \"Dolphin or C.\" The response correctly identifies the mammal from the given options.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The actual response \"C) Dolphin\" contains the word \"Dolphin,\" which matches the expected answer \"C\" and satisfies the evaluation type \"contains_word\" with the value \"Dolphin or C.\" The response correctly identifies the mammal from the given options.",
+          "response_time": 2.58618,
+          "tokens": {
+            "prompt": 197,
+            "completion": 64,
+            "total": 261
+          }
+        },
+        "timestamp": "2025-06-29T19:58:47.362662+00:00"
+      },
+      "category": "biology",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "C) Dolphin",
+        "model": "gpt-3.5-turbo",
+        "tokens": {
+          "prompt": 28,
+          "completion": 3,
+          "total": 31
+        },
+        "response_time": 0.699903,
+        "timestamp": "2025-06-29T19:58:44.752596+00:00"
+      }
+    }
+  ],
+  "summary": {
+    "total_tests": 7,
+    "total_score": 13.0,
+    "max_possible_score": 13.0,
+    "accuracy": 100.0,
+    "total_tokens": 487,
+    "total_response_time": 9.726187000000001,
+    "analyzer_tokens": 2442,
+    "analyzer_response_time": 11.846381000000001,
+    "average_response_time": 1.389455285714286,
+    "average_analyzer_response_time": 1.692340142857143
+  }
+}

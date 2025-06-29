@@ -254,13 +254,75 @@ For testing code functionality with specific inputs.
 - Limited to predefined rules
 - Good for objective questions
 
-### LLM-Based Evaluation (`llm_eval_runner.py`)
+### LLM-Based Evaluation (`llm_eval_runner.py`) - **RECOMMENDED**
 
 - Uses an "analyzer" LLM to judge responses
 - More nuanced understanding
 - Can handle subjective questions
 - Provides detailed explanations
 - **Recommended for most use cases**
+
+#### How LLM-Based Evaluation Works
+
+The LLM evaluator creates a sophisticated evaluation process:
+
+1. **Analyzer LLM Setup**: Configured in `config.json` under the `analyzer` section
+2. **Evaluation Prompt Construction**: Creates a detailed prompt for the analyzer that includes:
+   - Original question/prompt
+   - Expected answer
+   - Actual LLM response
+   - Evaluation type
+   - **Your evaluation hints** (crucial for guidance)
+3. **LLM Analysis**: The analyzer LLM determines if the response is Correct/Partial/Incorrect
+4. **Fallback Safety**: If LLM evaluation fails, automatically falls back to rule-based evaluation
+
+#### Key Insight: Evaluation Hints Are Critical
+
+**Your evaluation hints directly guide the analyzer LLM!** They are passed as part of the evaluation prompt:
+
+```python
+# From llm_evaluator.py - lines 78-90
+hint = test_case.get('evaluation_hint', None)
+hint_text = f"HINT: {hint}\n" if hint else ""
+# Include the hint in the evaluation prompt
+if hint:
+    evaluation_prompt = f"{hint}\n{evaluation_prompt}"
+```
+
+This means:
+- **Specific hints lead to better evaluation accuracy**
+- **Clear hint descriptions help the analyzer understand your intent**
+- **Hints work for both rule-based (fallback) and LLM-based evaluation**
+
+#### Example Evaluation Process
+
+For a test case with this hint:
+```json
+{
+  "evaluation_hint": {
+    "type": "contains_all_words",
+    "values": ["photosynthesis", "chlorophyll", "sunlight"],
+    "case_sensitive": false
+  }
+}
+```
+
+The analyzer LLM receives a prompt like:
+```
+HINT: {'type': 'contains_all_words', 'values': ['photosynthesis', 'chlorophyll', 'sunlight'], 'case_sensitive': false}
+
+I need you to evaluate if the following response correctly answers the question.
+
+QUESTION: Explain how plants make energy
+EXPECTED ANSWER: photosynthesis, chlorophyll, sunlight
+ACTUAL RESPONSE: [LLM's actual response]
+EVALUATION TYPE: key_elements
+
+Based on the evaluation type "key_elements", determine if the response is:
+1. Correct (full credit)
+2. Partially correct (half credit)  
+3. Incorrect (no credit)
+```
 
 ### Key Differences
 
@@ -272,6 +334,8 @@ For testing code functionality with specific inputs.
 | **Explanations** | Basic | Detailed |
 | **Cost** | Free | Uses analyzer LLM tokens |
 | **Subjectivity** | Cannot handle | Good with subjective questions |
+| **Hint Usage** | Direct pattern matching | Guides LLM analyzer thinking |
+| **Fallback** | None | Falls back to rule-based if needed |
 
 ## Best Practices
 

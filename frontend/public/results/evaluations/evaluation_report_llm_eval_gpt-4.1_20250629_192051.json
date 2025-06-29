@@ -1,0 +1,395 @@
+{
+  "evaluation_id": "llm_eval_20250629_191926",
+  "timestamp": "2025-06-29T19:19:26.933646+00:00",
+  "provider": "openai",
+  "model": "gpt-4.1",
+  "analyzer": {
+    "provider": "openai",
+    "model": "gpt-4o"
+  },
+  "test_suite_id": "mixed_general_knowledge_v1",
+  "results": [
+    {
+      "test_id": "math_001",
+      "prompt": "Prove that the sum of the angles in a triangle is always 180 degrees using a geometric explanation.",
+      "response": "Let's prove **geometrically** that **the sum of the angles in a triangle is always 180 degrees**.\n\n---\n\n## **Geometric Proof Using Parallel Lines**\n\n### **Step 1: Draw a Triangle**\n\nLet’s consider any triangle \\( \\triangle ABC \\).\n\n```\nA\n/ \\\n/   \\\nB-----C\n```\n\n### **Step 2: Draw a Line Parallel to the Base**\n\nDraw a line through vertex \\( A \\) parallel to the base \\( BC \\):\n\n```\n  (parallel line)\n      ------\n     /      \\\nA\n/ \\\n/   \\\nB-----C\n```\n\nLabel the triangle’s angles:\n\n- \\( \\angle BAC \\) at \\( A \\)\n- \\( \\angle ABC \\) at \\( B \\)\n- \\( \\angle ACB \\) at \\( C \\)\n\n### **Step 3: Mark Alternate Interior Angles**\n\nBecause the line through \\( A \\) is **parallel** to \\( BC \\), the following are **alternate interior angles**:\n\n- The angle at \\( B \\) (\\( \\angle ABC \\)), when extended, is congruent to the angle formed at \\( A \\) on the parallel line (left side).\n- The angle at \\( C \\) (\\( \\angle ACB \\)), when extended, is congruent to the angle formed at \\( A \\) on the parallel line (right side).\n\nLet's make this clearer with labels:\n\n- Let the angle at \\( A \\) be \\( \\alpha \\).\n- At \\( B \\), \\( \\beta \\).\n- At \\( C \\), \\( \\gamma \\).\n\n```\n(parallel line)\n    x     α     y\n     \\   |   /\n      \\  |  /\n        A\n       / \\\n      /   \\\n     B-----C\n```\n\n- At \\( A \\) on the parallel line, the left angle is congruent to \\( \\beta \\) (alternate interior angles).\n- At \\( A \\) on the parallel line, the right angle is congruent to \\( \\gamma \\) (alternate interior angles).\n- The angle at \\( A \\) itself is \\( \\alpha \\).\n\n### **Step 4: The Three Angles Form a Straight Line**\n\nAt point \\( A \\) on the parallel line, these three angles (\\( \\beta \\), \\( \\alpha \\), \\( \\gamma \\)) are **adjacent** and together form a **straight angle** (i.e., 180 degrees):\n\n\\[\n\\alpha + \\beta + \\gamma = 180^\\circ\n\\]\n\n### **Conclusion**\n\n**Therefore, the sum of the angles in a triangle is always 180 degrees.**\n\n---\n\n**Summary:**  \nBy drawing a line through a triangle's vertex parallel to the opposite side, the triangle's three interior angles fit together along a straight line, showing that their sum is \\( 180^\\circ \\).",
+      "expected": "180, triangle, straight line",
+      "evaluation": {
+        "score": 3.0,
+        "max_score": 3.0,
+        "evaluation_type": "key_elements",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The response correctly includes all the key elements from the expected answer: it explains that the sum of the angles in a triangle is 180 degrees, uses the concept of a triangle, and demonstrates how these angles form a straight line when extended. The geometric proof using parallel lines effectively shows that the angles of a triangle add up to form a straight line, which is 180 degrees.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The response correctly includes all the key elements from the expected answer: it explains that the sum of the angles in a triangle is 180 degrees, uses the concept of a triangle, and demonstrates how these angles form a straight line when extended. The geometric proof using parallel lines effectively shows that the angles of a triangle add up to form a straight line, which is 180 degrees.",
+          "response_time": 2.684748,
+          "tokens": {
+            "prompt": 850,
+            "completion": 85,
+            "total": 935
+          }
+        },
+        "timestamp": "2025-06-29T19:19:40.173225+00:00"
+      },
+      "category": "mathematics",
+      "difficulty": "medium",
+      "llm_metrics": {
+        "content": "Let's prove **geometrically** that **the sum of the angles in a triangle is always 180 degrees**.\n\n---\n\n## **Geometric Proof Using Parallel Lines**\n\n### **Step 1: Draw a Triangle**\n\nLet’s consider any triangle \\( \\triangle ABC \\).\n\n```\nA\n/ \\\n/   \\\nB-----C\n```\n\n### **Step 2: Draw a Line Parallel to the Base**\n\nDraw a line through vertex \\( A \\) parallel to the base \\( BC \\):\n\n```\n  (parallel line)\n      ------\n     /      \\\nA\n/ \\\n/   \\\nB-----C\n```\n\nLabel the triangle’s angles:\n\n- \\( \\angle BAC \\) at \\( A \\)\n- \\( \\angle ABC \\) at \\( B \\)\n- \\( \\angle ACB \\) at \\( C \\)\n\n### **Step 3: Mark Alternate Interior Angles**\n\nBecause the line through \\( A \\) is **parallel** to \\( BC \\), the following are **alternate interior angles**:\n\n- The angle at \\( B \\) (\\( \\angle ABC \\)), when extended, is congruent to the angle formed at \\( A \\) on the parallel line (left side).\n- The angle at \\( C \\) (\\( \\angle ACB \\)), when extended, is congruent to the angle formed at \\( A \\) on the parallel line (right side).\n\nLet's make this clearer with labels:\n\n- Let the angle at \\( A \\) be \\( \\alpha \\).\n- At \\( B \\), \\( \\beta \\).\n- At \\( C \\), \\( \\gamma \\).\n\n```\n(parallel line)\n    x     α     y\n     \\   |   /\n      \\  |  /\n        A\n       / \\\n      /   \\\n     B-----C\n```\n\n- At \\( A \\) on the parallel line, the left angle is congruent to \\( \\beta \\) (alternate interior angles).\n- At \\( A \\) on the parallel line, the right angle is congruent to \\( \\gamma \\) (alternate interior angles).\n- The angle at \\( A \\) itself is \\( \\alpha \\).\n\n### **Step 4: The Three Angles Form a Straight Line**\n\nAt point \\( A \\) on the parallel line, these three angles (\\( \\beta \\), \\( \\alpha \\), \\( \\gamma \\)) are **adjacent** and together form a **straight angle** (i.e., 180 degrees):\n\n\\[\n\\alpha + \\beta + \\gamma = 180^\\circ\n\\]\n\n### **Conclusion**\n\n**Therefore, the sum of the angles in a triangle is always 180 degrees.**\n\n---\n\n**Summary:**  \nBy drawing a line through a triangle's vertex parallel to the opposite side, the triangle's three interior angles fit together along a straight line, showing that their sum is \\( 180^\\circ \\).",
+        "model": "gpt-4.1",
+        "tokens": {
+          "prompt": 28,
+          "completion": 594,
+          "total": 622
+        },
+        "response_time": 10.530657,
+        "timestamp": "2025-06-29T19:19:37.464323+00:00"
+      }
+    },
+    {
+      "test_id": "lang_001",
+      "prompt": "Translate this text into French: 'The weather is beautiful today, and I plan to go for a walk in the park.'",
+      "response": "Le temps est beau aujourd'hui, et je prévois de faire une promenade dans le parc.",
+      "expected": "Le temps est magnifique aujourd'hui, et je prévois de faire une promenade dans le parc.",
+      "evaluation": {
+        "score": 0.0,
+        "max_score": 2.0,
+        "evaluation_type": "exact_match",
+        "llm_evaluation": {
+          "correct": false,
+          "partial": false,
+          "explanation": "The actual response does not exactly match the expected answer. The word \"beau\" is used instead of \"magnifique,\" which does not satisfy the \"exact_match\" requirement.",
+          "raw_response": "CORRECT: No  \nEXPLANATION: The actual response does not exactly match the expected answer. The word \"beau\" is used instead of \"magnifique,\" which does not satisfy the \"exact_match\" requirement.",
+          "response_time": 1.903286,
+          "tokens": {
+            "prompt": 301,
+            "completion": 45,
+            "total": 346
+          }
+        },
+        "timestamp": "2025-06-29T19:19:43.222907+00:00"
+      },
+      "category": "language",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "Le temps est beau aujourd'hui, et je prévois de faire une promenade dans le parc.",
+        "model": "gpt-4.1",
+        "tokens": {
+          "prompt": 32,
+          "completion": 20,
+          "total": 52
+        },
+        "response_time": 1.129799,
+        "timestamp": "2025-06-29T19:19:41.303106+00:00"
+      }
+    },
+    {
+      "test_id": "prog_001",
+      "prompt": "Write a Python function that checks if a string is a palindrome.",
+      "response": "Certainly! A **palindrome** is a string that reads the same forwards and backwards (e.g., `\"madam\"`, `\"racecar\"`).\n\nHere’s a simple Python function to check if a string is a palindrome:\n\n```python\ndef is_palindrome(s):\n    # Optionally, make it case-insensitive and ignore non-alphanumerics:\n    # s = ''.join(c.lower() for c in s if c.isalnum())\n    return s == s[::-1]\n```\n\n**Usage:**\n\n```python\nprint(is_palindrome(\"madam\"))        # True\nprint(is_palindrome(\"racecar\"))      # True\nprint(is_palindrome(\"hello\"))        # False\n```\n\n---\n\n**If you want to ignore case and spaces/punctuation:**\n\n```python\ndef is_palindrome(s):\n    s = ''.join(c.lower() for c in s if c.isalnum())\n    return s == s[::-1]\n```\n\n**Usage:**\n\n```python\nprint(is_palindrome(\"A man, a plan, a canal: Panama\"))  # True\n```\n\nLet me know if you'd like further explanation!",
+      "expected": "def is_palindrome(s): return s == s[::-1]",
+      "evaluation": {
+        "score": 3.0,
+        "max_score": 3.0,
+        "evaluation_type": "functional_equivalence",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The actual response provides a Python function `is_palindrome(s)` that checks if a string is a palindrome by comparing the string to its reverse (`s[::-1]`). This is functionally equivalent to the expected answer. The response also includes an optional enhancement to ignore case and non-alphanumeric characters, which does not affect the core functionality. The examples provided in the response match the test cases, confirming the function's correctness.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The actual response provides a Python function `is_palindrome(s)` that checks if a string is a palindrome by comparing the string to its reverse (`s[::-1]`). This is functionally equivalent to the expected answer. The response also includes an optional enhancement to ignore case and non-alphanumeric characters, which does not affect the core functionality. The examples provided in the response match the test cases, confirming the function's correctness.",
+          "response_time": 2.161773,
+          "tokens": {
+            "prompt": 499,
+            "completion": 94,
+            "total": 593
+          }
+        },
+        "timestamp": "2025-06-29T19:19:48.585492+00:00"
+      },
+      "category": "programming",
+      "difficulty": "medium",
+      "llm_metrics": {
+        "content": "Certainly! A **palindrome** is a string that reads the same forwards and backwards (e.g., `\"madam\"`, `\"racecar\"`).\n\nHere’s a simple Python function to check if a string is a palindrome:\n\n```python\ndef is_palindrome(s):\n    # Optionally, make it case-insensitive and ignore non-alphanumerics:\n    # s = ''.join(c.lower() for c in s if c.isalnum())\n    return s == s[::-1]\n```\n\n**Usage:**\n\n```python\nprint(is_palindrome(\"madam\"))        # True\nprint(is_palindrome(\"racecar\"))      # True\nprint(is_palindrome(\"hello\"))        # False\n```\n\n---\n\n**If you want to ignore case and spaces/punctuation:**\n\n```python\ndef is_palindrome(s):\n    s = ''.join(c.lower() for c in s if c.isalnum())\n    return s == s[::-1]\n```\n\n**Usage:**\n\n```python\nprint(is_palindrome(\"A man, a plan, a canal: Panama\"))  # True\n```\n\nLet me know if you'd like further explanation!",
+        "model": "gpt-4.1",
+        "tokens": {
+          "prompt": 20,
+          "completion": 235,
+          "total": 255
+        },
+        "response_time": 3.177527,
+        "timestamp": "2025-06-29T19:19:46.400483+00:00"
+      }
+    },
+    {
+      "test_id": "stats_001",
+      "prompt": "Explain the difference between 'correlation' and 'causation' in the context of data science.",
+      "response": "**Correlation** and **causation** are two fundamental concepts in data science, statistics, and research. Here’s how they differ:\n\n---\n\n### **Correlation**\n- **Definition:** Correlation measures the strength and direction of a relationship between two variables.\n- **What it tells you:** When two variables are correlated, it means that as one variable changes, the other variable tends to change in a specific way (either both increase/decrease together, or one increases as the other decreases).\n- **Example:** Ice cream sales and temperature are correlated: as temperature rises, ice cream sales also tend to rise.\n- **Important Note:** Correlation does **not** imply that one variable causes the other to change.\n\n---\n\n### **Causation**\n- **Definition:** Causation (or causality) means that a change in one variable **directly causes** a change in another variable.\n- **What it tells you:** If variable A causes variable B, then manipulating A will produce a change in B.\n- **Example:** Increasing the amount of fertilizer applied to a plant directly causes it to grow faster.\n- **Important Note:** Proving causation typically requires controlled experiments or specific statistical methods (like randomized controlled trials).\n\n---\n\n### **Key Difference**\n- **Correlation:** Variables change together, but one does **not necessarily** cause the other.\n- **Causation:** One variable’s change **produces** a change in the other.\n\n---\n\n### **In Data Science**\n- **Correlation analysis** is often used to find patterns and relationships in data.\n- **Causal inference** aims to determine whether those relationships are actually causal, which is much more challenging and often requires experimental or advanced observational methods.\n\n---\n\n**Summary:**  \n> **Correlation** is about association; **causation** is about one variable influencing another. Not all correlations are causal, but all causations will produce some correlation. \n\n**Classic phrase:**  \n> \"Correlation does not imply causation.\"",
+      "expected": "correlation, causation, relationship, cause",
+      "evaluation": {
+        "score": 2.5,
+        "max_score": 2.5,
+        "evaluation_type": "key_elements",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The response correctly explains the difference between 'correlation' and 'causation' and includes all the key elements from the expected answer: 'correlation', 'causation', 'relationship', and 'cause'. It clearly defines both terms, provides examples, and emphasizes the distinction between correlation and causation, fulfilling the requirements for full credit.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The response correctly explains the difference between 'correlation' and 'causation' and includes all the key elements from the expected answer: 'correlation', 'causation', 'relationship', and 'cause'. It clearly defines both terms, provides examples, and emphasizes the distinction between correlation and causation, fulfilling the requirements for full credit.",
+          "response_time": 2.165027,
+          "tokens": {
+            "prompt": 662,
+            "completion": 79,
+            "total": 741
+          }
+        },
+        "timestamp": "2025-06-29T19:19:58.999801+00:00"
+      },
+      "category": "statistics",
+      "difficulty": "medium",
+      "llm_metrics": {
+        "content": "**Correlation** and **causation** are two fundamental concepts in data science, statistics, and research. Here’s how they differ:\n\n---\n\n### **Correlation**\n- **Definition:** Correlation measures the strength and direction of a relationship between two variables.\n- **What it tells you:** When two variables are correlated, it means that as one variable changes, the other variable tends to change in a specific way (either both increase/decrease together, or one increases as the other decreases).\n- **Example:** Ice cream sales and temperature are correlated: as temperature rises, ice cream sales also tend to rise.\n- **Important Note:** Correlation does **not** imply that one variable causes the other to change.\n\n---\n\n### **Causation**\n- **Definition:** Causation (or causality) means that a change in one variable **directly causes** a change in another variable.\n- **What it tells you:** If variable A causes variable B, then manipulating A will produce a change in B.\n- **Example:** Increasing the amount of fertilizer applied to a plant directly causes it to grow faster.\n- **Important Note:** Proving causation typically requires controlled experiments or specific statistical methods (like randomized controlled trials).\n\n---\n\n### **Key Difference**\n- **Correlation:** Variables change together, but one does **not necessarily** cause the other.\n- **Causation:** One variable’s change **produces** a change in the other.\n\n---\n\n### **In Data Science**\n- **Correlation analysis** is often used to find patterns and relationships in data.\n- **Causal inference** aims to determine whether those relationships are actually causal, which is much more challenging and often requires experimental or advanced observational methods.\n\n---\n\n**Summary:**  \n> **Correlation** is about association; **causation** is about one variable influencing another. Not all correlations are causal, but all causations will produce some correlation. \n\n**Classic phrase:**  \n> \"Correlation does not imply causation.\"",
+        "model": "gpt-4.1",
+        "tokens": {
+          "prompt": 28,
+          "completion": 400,
+          "total": 428
+        },
+        "response_time": 8.225507,
+        "timestamp": "2025-06-29T19:19:56.811020+00:00"
+      }
+    },
+    {
+      "test_id": "math_002",
+      "prompt": "Solve the integral in python with no libraries: ∫(2x^2 + 3x + 1) dx.",
+      "response": "Certainly! Let's **solve the integral**  \n\\[\n\\int (2x^2 + 3x + 1) \\, dx\n\\]\n**by hand in Python (no libraries):**\n\n### Step-by-Step Solution\n\nThe integral is:\n\\[\n\\int (2x^2 + 3x + 1) dx = \\int 2x^2 dx + \\int 3x dx + \\int 1 dx\n\\]\n\nIntegrating term by term:\n\n- \\(\\int 2x^2 dx = 2 \\cdot \\frac{x^3}{3} = \\frac{2}{3}x^3\\)\n- \\(\\int 3x dx = 3 \\cdot \\frac{x^2}{2} = \\frac{3}{2}x^2\\)\n- \\(\\int 1 dx = x\\)\n\nSo the **general antiderivative** is:\n\\[\n\\frac{2}{3}x^3 + \\frac{3}{2}x^2 + x + C\n\\]\n\n---\n\n### **Python Function (No Libraries)**\n\nHere’s a **Python function** (no libraries!) that returns the indefinite integral as a string:\n\n```python\ndef integral_of_polynomial(x):\n    return (2/3)*x**3 + (3/2)*x**2 + x\n\n# Example usage:\nx_val = 2\nresult = integral_of_polynomial(x_val)\nprint(\"F(2) =\", result)\n```\n\nIf you want the formula as a string (for any \\(x\\)), just print it:\n\n```python\nprint(\"Integral: (2/3)x^3 + (3/2)x^2 + x + C\")\n```\n\n---\n\n#### **Summary**\n\n- **Analytical answer:**  \n  \\[\n  \\int (2x^2 + 3x + 1) dx = \\frac{2}{3}x^3 + \\frac{3}{2}x^2 + x + C\n  \\]\n\n- **Python (no libraries):**\n\n  ```python\n  def integral_of_polynomial(x):\n      return (2/3)*x**3 + (3/2)*x**2 + x\n  ```\n\nLet me know if you want a more general code for any polynomial!",
+      "expected": "x^3, x^2, C",
+      "evaluation": {
+        "score": 3.5,
+        "max_score": 3.5,
+        "evaluation_type": "key_elements",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The response correctly solves the integral by breaking it down into individual terms and integrating each one. It includes all the key elements from the expected answer: the terms \\(x^3\\), \\(x^2\\), and the constant of integration \\(C\\). Additionally, it provides a Python function to compute the integral without using libraries, aligning with the question's requirement.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The response correctly solves the integral by breaking it down into individual terms and integrating each one. It includes all the key elements from the expected answer: the terms \\(x^3\\), \\(x^2\\), and the constant of integration \\(C\\). Additionally, it provides a Python function to compute the integral without using libraries, aligning with the question's requirement.",
+          "response_time": 1.661079,
+          "tokens": {
+            "prompt": 750,
+            "completion": 83,
+            "total": 833
+          }
+        },
+        "timestamp": "2025-06-29T19:20:07.562581+00:00"
+      },
+      "category": "mathematics",
+      "difficulty": "hard",
+      "llm_metrics": {
+        "content": "Certainly! Let's **solve the integral**  \n\\[\n\\int (2x^2 + 3x + 1) \\, dx\n\\]\n**by hand in Python (no libraries):**\n\n### Step-by-Step Solution\n\nThe integral is:\n\\[\n\\int (2x^2 + 3x + 1) dx = \\int 2x^2 dx + \\int 3x dx + \\int 1 dx\n\\]\n\nIntegrating term by term:\n\n- \\(\\int 2x^2 dx = 2 \\cdot \\frac{x^3}{3} = \\frac{2}{3}x^3\\)\n- \\(\\int 3x dx = 3 \\cdot \\frac{x^2}{2} = \\frac{3}{2}x^2\\)\n- \\(\\int 1 dx = x\\)\n\nSo the **general antiderivative** is:\n\\[\n\\frac{2}{3}x^3 + \\frac{3}{2}x^2 + x + C\n\\]\n\n---\n\n### **Python Function (No Libraries)**\n\nHere’s a **Python function** (no libraries!) that returns the indefinite integral as a string:\n\n```python\ndef integral_of_polynomial(x):\n    return (2/3)*x**3 + (3/2)*x**2 + x\n\n# Example usage:\nx_val = 2\nresult = integral_of_polynomial(x_val)\nprint(\"F(2) =\", result)\n```\n\nIf you want the formula as a string (for any \\(x\\)), just print it:\n\n```python\nprint(\"Integral: (2/3)x^3 + (3/2)x^2 + x + C\")\n```\n\n---\n\n#### **Summary**\n\n- **Analytical answer:**  \n  \\[\n  \\int (2x^2 + 3x + 1) dx = \\frac{2}{3}x^3 + \\frac{3}{2}x^2 + x + C\n  \\]\n\n- **Python (no libraries):**\n\n  ```python\n  def integral_of_polynomial(x):\n      return (2/3)*x**3 + (3/2)*x**2 + x\n  ```\n\nLet me know if you want a more general code for any polynomial!",
+        "model": "gpt-4.1",
+        "tokens": {
+          "prompt": 33,
+          "completion": 485,
+          "total": 518
+        },
+        "response_time": 6.884749,
+        "timestamp": "2025-06-29T19:20:05.884592+00:00"
+      }
+    },
+    {
+      "test_id": "db_001",
+      "prompt": "In a relational database, explain the concept of normalization and list its advantages.",
+      "response": "**Normalization** is a systematic process in relational database design that organizes data to reduce redundancy and improve data integrity. It involves dividing large tables into smaller, related tables and defining relationships between them according to rules known as **normal forms** (1NF, 2NF, 3NF, etc.).\n\n### Key Concepts:\n- **Eliminates redundant (duplicated) data**\n- **Ensures data dependencies make sense**\n- **Structures data so that modifications (insert, update, delete) can be made with minimal risk of anomalies**\n\n### **Advantages of Normalization:**\n\n1. **Reduces Data Redundancy**  \n   - Prevents unnecessary duplication of data, saving storage and making data management more efficient.\n\n2. **Improves Data Integrity and Consistency**  \n   - Ensures that data is logically stored, so updates, inserts, and deletes do not result in inconsistent or contradictory data.\n\n3. **Prevents Update, Insert, and Delete Anomalies**  \n   - Minimizes problems that can occur when modifying data, such as unintentionally losing information or introducing incorrect data.\n\n4. **Enhances Query Performance (in some cases)**  \n   - Well-structured tables can make queries more efficient by reducing the amount of data that needs to be scanned and processed.\n\n5. **Facilitates Easier Maintenance**  \n   - Changes to the database structure are simpler and less error-prone because of the clear separation of data.\n\n6. **Improves Flexibility**  \n   - Allows the database to adapt to changes in requirements more easily, as data is structured in logical units.\n\n---\n\n**In summary:**  \nNormalization streamlines database design by organizing data into logical, non-redundant structures, which greatly improves data accuracy, integrity, and maintainability.",
+      "expected": "redundancy, integrity, consistency",
+      "evaluation": {
+        "score": 3.0,
+        "max_score": 3.0,
+        "evaluation_type": "key_elements",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The actual response includes all the key concepts from the expected answer: redundancy, integrity, and consistency. It explains how normalization reduces data redundancy, improves data integrity and consistency, and prevents anomalies, which aligns with the key elements required for a correct answer.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The actual response includes all the key concepts from the expected answer: redundancy, integrity, and consistency. It explains how normalization reduces data redundancy, improves data integrity and consistency, and prevents anomalies, which aligns with the key elements required for a correct answer.",
+          "response_time": 2.777766,
+          "tokens": {
+            "prompt": 612,
+            "completion": 59,
+            "total": 671
+          }
+        },
+        "timestamp": "2025-06-29T19:20:15.762939+00:00"
+      },
+      "category": "database",
+      "difficulty": "hard",
+      "llm_metrics": {
+        "content": "**Normalization** is a systematic process in relational database design that organizes data to reduce redundancy and improve data integrity. It involves dividing large tables into smaller, related tables and defining relationships between them according to rules known as **normal forms** (1NF, 2NF, 3NF, etc.).\n\n### Key Concepts:\n- **Eliminates redundant (duplicated) data**\n- **Ensures data dependencies make sense**\n- **Structures data so that modifications (insert, update, delete) can be made with minimal risk of anomalies**\n\n### **Advantages of Normalization:**\n\n1. **Reduces Data Redundancy**  \n   - Prevents unnecessary duplication of data, saving storage and making data management more efficient.\n\n2. **Improves Data Integrity and Consistency**  \n   - Ensures that data is logically stored, so updates, inserts, and deletes do not result in inconsistent or contradictory data.\n\n3. **Prevents Update, Insert, and Delete Anomalies**  \n   - Minimizes problems that can occur when modifying data, such as unintentionally losing information or introducing incorrect data.\n\n4. **Enhances Query Performance (in some cases)**  \n   - Well-structured tables can make queries more efficient by reducing the amount of data that needs to be scanned and processed.\n\n5. **Facilitates Easier Maintenance**  \n   - Changes to the database structure are simpler and less error-prone because of the clear separation of data.\n\n6. **Improves Flexibility**  \n   - Allows the database to adapt to changes in requirements more easily, as data is structured in logical units.\n\n---\n\n**In summary:**  \nNormalization streamlines database design by organizing data into logical, non-redundant structures, which greatly improves data accuracy, integrity, and maintainability.",
+        "model": "gpt-4.1",
+        "tokens": {
+          "prompt": 22,
+          "completion": 360,
+          "total": 382
+        },
+        "response_time": 5.399656,
+        "timestamp": "2025-06-29T19:20:12.962287+00:00"
+      }
+    },
+    {
+      "test_id": "db_002",
+      "prompt": "Scrivi una query SQL che restituisca i dipendenti che guadagnano più di 50.000 euro e lavorano nel dipartimento 'Vendite'.",
+      "response": "Certo! Ecco una query SQL che restituisce i dipendenti che guadagnano più di 50.000 euro e lavorano nel dipartimento \"Vendite\".  \nSupponendo che la tabella si chiami `dipendenti` e che abbia almeno i campi `stipendio` e `dipartimento`:\n\n```sql\nSELECT *\nFROM dipendenti\nWHERE stipendio > 50000\n  AND dipartimento = 'Vendite';\n```\n\n**Nota:**  \nSostituisci i nomi delle colonne o della tabella se la tua struttura dati è diversa.",
+      "expected": "dipendenti, stipendio > 50000, Vendite",
+      "evaluation": {
+        "score": 2.5,
+        "max_score": 2.5,
+        "evaluation_type": "contains_all",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The response contains all the required elements: it mentions \"dipendenti,\" checks for \"stipendio > 50000,\" and specifies the \"Vendite\" department. The SQL query provided accurately reflects these criteria, fulfilling the \"contains_all\" evaluation requirement.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The response contains all the required elements: it mentions \"dipendenti,\" checks for \"stipendio > 50000,\" and specifies the \"Vendite\" department. The SQL query provided accurately reflects these criteria, fulfilling the \"contains_all\" evaluation requirement.",
+          "response_time": 1.224299,
+          "tokens": {
+            "prompt": 400,
+            "completion": 62,
+            "total": 462
+          }
+        },
+        "timestamp": "2025-06-29T19:20:18.832419+00:00"
+      },
+      "category": "database",
+      "difficulty": "medium",
+      "llm_metrics": {
+        "content": "Certo! Ecco una query SQL che restituisce i dipendenti che guadagnano più di 50.000 euro e lavorano nel dipartimento \"Vendite\".  \nSupponendo che la tabella si chiami `dipendenti` e che abbia almeno i campi `stipendio` e `dipartimento`:\n\n```sql\nSELECT *\nFROM dipendenti\nWHERE stipendio > 50000\n  AND dipartimento = 'Vendite';\n```\n\n**Nota:**  \nSostituisci i nomi delle colonne o della tabella se la tua struttura dati è diversa.",
+        "model": "gpt-4.1",
+        "tokens": {
+          "prompt": 43,
+          "completion": 129,
+          "total": 172
+        },
+        "response_time": 1.824233,
+        "timestamp": "2025-06-29T19:20:17.587207+00:00"
+      }
+    },
+    {
+      "test_id": "algo_001",
+      "prompt": "Explain the Big-O complexity of a binary search algorithm.",
+      "response": "**Binary Search Algorithm - Big-O Complexity**\n\nBinary search is an efficient algorithm for finding an item from a **sorted** list of items. It works by repeatedly dividing the search interval in half:\n\n- Start with the entire list.\n- Compare the middle element to the target.\n  - If equal, found!\n  - If the target is less, repeat on the left half.\n  - If the target is greater, repeat on the right half.\n- Repeat until the interval is empty.\n\n**Time Complexity (Big-O):**\n\n- **Best Case:**  \n  - **O(1)** (if the target is at the middle position on the first check)\n\n- **Worst Case / Average Case:**  \n  - **O(log n)**  \n    - With each step, the search space is halved.\n    - After k steps, you have n/(2^k) elements left.\n    - Stop when n/(2^k) = 1 → k = log₂(n)\n    - So, the number of steps is proportional to log₂(n).\n\n**Space Complexity:**\n\n- **Iterative Implementation:**  \n  - **O(1)** (only a few variables are used)\n\n- **Recursive Implementation:**  \n  - **O(log n)** (due to the call stack for recursion)\n\n**Summary Table:**\n\n| Case        | Time Complexity |\n|-------------|----------------|\n| Best        | O(1)           |\n| Average     | O(log n)       |\n| Worst       | O(log n)       |\n\n**Key Point:**  \nBinary search is much faster than linear search (O(n)), but only works on **sorted** data structures that allow random access (like arrays).",
+      "expected": "O(log n)",
+      "evaluation": {
+        "score": 3.0,
+        "max_score": 3.0,
+        "evaluation_type": "contains_word",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The response correctly explains the Big-O complexity of a binary search algorithm, specifically mentioning that the worst-case and average-case time complexity is O(log n), which matches the expected answer. The response also provides additional context and details about the algorithm's operation and complexity, which supports the evaluation type \"contains_word\" for O(log n).",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The response correctly explains the Big-O complexity of a binary search algorithm, specifically mentioning that the worst-case and average-case time complexity is O(log n), which matches the expected answer. The response also provides additional context and details about the algorithm's operation and complexity, which supports the evaluation type \"contains_word\" for O(log n).",
+          "response_time": 1.627184,
+          "tokens": {
+            "prompt": 527,
+            "completion": 75,
+            "total": 602
+          }
+        },
+        "timestamp": "2025-06-29T19:20:32.482279+00:00"
+      },
+      "category": "algorithms",
+      "difficulty": "hard",
+      "llm_metrics": {
+        "content": "**Binary Search Algorithm - Big-O Complexity**\n\nBinary search is an efficient algorithm for finding an item from a **sorted** list of items. It works by repeatedly dividing the search interval in half:\n\n- Start with the entire list.\n- Compare the middle element to the target.\n  - If equal, found!\n  - If the target is less, repeat on the left half.\n  - If the target is greater, repeat on the right half.\n- Repeat until the interval is empty.\n\n**Time Complexity (Big-O):**\n\n- **Best Case:**  \n  - **O(1)** (if the target is at the middle position on the first check)\n\n- **Worst Case / Average Case:**  \n  - **O(log n)**  \n    - With each step, the search space is halved.\n    - After k steps, you have n/(2^k) elements left.\n    - Stop when n/(2^k) = 1 → k = log₂(n)\n    - So, the number of steps is proportional to log₂(n).\n\n**Space Complexity:**\n\n- **Iterative Implementation:**  \n  - **O(1)** (only a few variables are used)\n\n- **Recursive Implementation:**  \n  - **O(log n)** (due to the call stack for recursion)\n\n**Summary Table:**\n\n| Case        | Time Complexity |\n|-------------|----------------|\n| Best        | O(1)           |\n| Average     | O(log n)       |\n| Worst       | O(log n)       |\n\n**Key Point:**  \nBinary search is much faster than linear search (O(n)), but only works on **sorted** data structures that allow random access (like arrays).",
+        "model": "gpt-4.1",
+        "tokens": {
+          "prompt": 18,
+          "completion": 345,
+          "total": 363
+        },
+        "response_time": 11.999887,
+        "timestamp": "2025-06-29T19:20:30.832349+00:00"
+      }
+    },
+    {
+      "test_id": "ml_001",
+      "prompt": "Describe the process of backpropagation in a neural network.",
+      "response": "Backpropagation is the fundamental algorithm used to train neural networks by updating their weights to minimize the error in predictions. The process involves the following steps:\n\n1. **Forward Pass**:  \n   - Input data is fed into the network.\n   - Each neuron computes a weighted sum of its inputs, applies an activation function, and passes the output to the next layer.\n   - This continues until the final output layer produces a prediction.\n\n2. **Compute Loss**:  \n   - The network’s output is compared to the true value using a loss (or cost) function (e.g., mean squared error for regression, cross-entropy for classification).\n   - This computes the error of the network.\n\n3. **Backward Pass (Backpropagation Proper)**:\n   - The algorithm computes the gradient (partial derivatives) of the loss function with respect to each weight in the network.\n   - This is done using the chain rule from calculus, propagating the error backward from the output layer to the input layer.\n   - For each neuron:\n     - Calculate the gradient of the loss with respect to the neuron's output.\n     - Use the chain rule to find how much each upstream weight contributed to the error.\n\n4. **Weight Update (Gradient Descent)**:\n   - The network’s weights are adjusted in the direction that reduces the loss, typically by a small step proportional to the negative of the gradient.\n   - This is done using an optimization algorithm, most commonly stochastic gradient descent (SGD) or its variants.\n   - The update rule for a weight \\( w \\) is:  \n     \\[\n     w \\leftarrow w - \\eta \\frac{\\partial L}{\\partial w}\n     \\]\n     where \\( \\eta \\) is the learning rate and \\( \\frac{\\partial L}{\\partial w} \\) is the gradient of the loss with respect to the weight.\n\n5. **Repeat**:\n   - The process is repeated for many iterations (epochs) over the training data, continually refining the weights to improve predictions.\n\n**Summary:**  \nBackpropagation efficiently computes how the error changes with respect to each weight in the network, enabling the network to learn from data by adjusting its weights to minimize prediction errors.",
+      "expected": "gradient, loss, weights",
+      "evaluation": {
+        "score": 3.5,
+        "max_score": 3.5,
+        "evaluation_type": "key_elements",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The response includes all the key elements expected in the answer: it discusses the computation of the gradient, the use of a loss function to measure error, and the updating of weights to minimize this error. The explanation is detailed and covers the process of backpropagation comprehensively, demonstrating a clear understanding of the key concepts.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The response includes all the key elements expected in the answer: it discusses the computation of the gradient, the use of a loss function to measure error, and the updating of weights to minimize this error. The explanation is detailed and covers the process of backpropagation comprehensively, demonstrating a clear understanding of the key concepts.",
+          "response_time": 1.99553,
+          "tokens": {
+            "prompt": 695,
+            "completion": 73,
+            "total": 768
+          }
+        },
+        "timestamp": "2025-06-29T19:20:39.740122+00:00"
+      },
+      "category": "machine_learning",
+      "difficulty": "hard",
+      "llm_metrics": {
+        "content": "Backpropagation is the fundamental algorithm used to train neural networks by updating their weights to minimize the error in predictions. The process involves the following steps:\n\n1. **Forward Pass**:  \n   - Input data is fed into the network.\n   - Each neuron computes a weighted sum of its inputs, applies an activation function, and passes the output to the next layer.\n   - This continues until the final output layer produces a prediction.\n\n2. **Compute Loss**:  \n   - The network’s output is compared to the true value using a loss (or cost) function (e.g., mean squared error for regression, cross-entropy for classification).\n   - This computes the error of the network.\n\n3. **Backward Pass (Backpropagation Proper)**:\n   - The algorithm computes the gradient (partial derivatives) of the loss function with respect to each weight in the network.\n   - This is done using the chain rule from calculus, propagating the error backward from the output layer to the input layer.\n   - For each neuron:\n     - Calculate the gradient of the loss with respect to the neuron's output.\n     - Use the chain rule to find how much each upstream weight contributed to the error.\n\n4. **Weight Update (Gradient Descent)**:\n   - The network’s weights are adjusted in the direction that reduces the loss, typically by a small step proportional to the negative of the gradient.\n   - This is done using an optimization algorithm, most commonly stochastic gradient descent (SGD) or its variants.\n   - The update rule for a weight \\( w \\) is:  \n     \\[\n     w \\leftarrow w - \\eta \\frac{\\partial L}{\\partial w}\n     \\]\n     where \\( \\eta \\) is the learning rate and \\( \\frac{\\partial L}{\\partial w} \\) is the gradient of the loss with respect to the weight.\n\n5. **Repeat**:\n   - The process is repeated for many iterations (epochs) over the training data, continually refining the weights to improve predictions.\n\n**Summary:**  \nBackpropagation efficiently computes how the error changes with respect to each weight in the network, enabling the network to learn from data by adjusting its weights to minimize prediction errors.",
+        "model": "gpt-4.1",
+        "tokens": {
+          "prompt": 19,
+          "completion": 452,
+          "total": 471
+        },
+        "response_time": 5.23991,
+        "timestamp": "2025-06-29T19:20:37.722231+00:00"
+      }
+    },
+    {
+      "test_id": "physics_001",
+      "prompt": "Spiega la teoria della relatività ristretta di Einstein in termini semplici.",
+      "response": "Certo! Ecco una spiegazione semplice della **teoria della relatività ristretta** di Albert Einstein:\n\n---\n\n### 1. **Cos'è la relatività ristretta?**\nÈ una teoria scientifica che descrive come funzionano lo spazio e il tempo quando ci si muove a velocità molto elevate, vicine a quella della luce.\n\n---\n\n### 2. **I due principi fondamentali**\nEinstein ha basato la sua teoria su due idee principali:\n\n- **Le leggi della fisica sono uguali per tutti**: Non importa se sei fermo o viaggi a velocità costante, le leggi della fisica funzionano sempre allo stesso modo.\n- **La velocità della luce è sempre la stessa**: Ovunque tu sia e a qualunque velocità tu vada, la luce viaggia sempre alla stessa velocità (circa 300.000 km al secondo nel vuoto).\n\n---\n\n### 3. **Cosa cambia rispetto al senso comune?**\n\nA velocità normali (come quelle delle auto), spazio e tempo sembrano separati e \"normali\". Ma, a velocità altissime, succedono cose sorprendenti:\n\n- **Dilatazione del tempo**: Se viaggi molto velocemente, il tempo per te scorre più lentamente rispetto a chi sta fermo. Ad esempio, un orologio su un'astronave veloce \"batte\" più lentamente.\n- **Contrazione delle lunghezze**: Un oggetto che si muove molto velocemente appare più corto nella direzione in cui si muove, visto da chi sta fermo.\n- **Relatività della simultaneità**: Due eventi che sembrano accadere nello stesso momento per una persona, possono sembrare avvenire in momenti diversi per un'altra persona che si muove rispetto alla prima.\n\n---\n\n### 4. **Perché è importante?**\nLa relatività ristretta ha cambiato il nostro modo di vedere l'universo. Ha portato a scoperte come la famosa formula **E=mc²**, che mostra che massa ed energia sono due facce della stessa medaglia.\n\n---\n\n**In sintesi:**  \nLa teoria della relatività ristretta ci dice che spazio e tempo non sono assoluti e separati, ma dipendono da come ci muoviamo. Quando viaggiamo molto velocemente, il tempo e le distanze cambiano rispetto a chi sta fermo. Tutto questo perché la velocità della luce è la stessa per tutti!",
+      "expected": "leggi fisiche, velocità della luce, costante",
+      "evaluation": {
+        "score": 3.0,
+        "max_score": 3.0,
+        "evaluation_type": "key_elements",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The actual response includes all the key elements from the expected answer: it mentions the \"leggi fisiche\" (laws of physics), the \"velocità della luce\" (speed of light), and that it is \"costante\" (constant). These elements are clearly explained within the context of Einstein's theory of relativity, fulfilling the requirements for a correct answer.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The actual response includes all the key elements from the expected answer: it mentions the \"leggi fisiche\" (laws of physics), the \"velocità della luce\" (speed of light), and that it is \"costante\" (constant). These elements are clearly explained within the context of Einstein's theory of relativity, fulfilling the requirements for a correct answer.",
+          "response_time": 2.15919,
+          "tokens": {
+            "prompt": 788,
+            "completion": 84,
+            "total": 872
+          }
+        },
+        "timestamp": "2025-06-29T19:20:51.412981+00:00"
+      },
+      "category": "physics",
+      "difficulty": "hard",
+      "llm_metrics": {
+        "content": "Certo! Ecco una spiegazione semplice della **teoria della relatività ristretta** di Albert Einstein:\n\n---\n\n### 1. **Cos'è la relatività ristretta?**\nÈ una teoria scientifica che descrive come funzionano lo spazio e il tempo quando ci si muove a velocità molto elevate, vicine a quella della luce.\n\n---\n\n### 2. **I due principi fondamentali**\nEinstein ha basato la sua teoria su due idee principali:\n\n- **Le leggi della fisica sono uguali per tutti**: Non importa se sei fermo o viaggi a velocità costante, le leggi della fisica funzionano sempre allo stesso modo.\n- **La velocità della luce è sempre la stessa**: Ovunque tu sia e a qualunque velocità tu vada, la luce viaggia sempre alla stessa velocità (circa 300.000 km al secondo nel vuoto).\n\n---\n\n### 3. **Cosa cambia rispetto al senso comune?**\n\nA velocità normali (come quelle delle auto), spazio e tempo sembrano separati e \"normali\". Ma, a velocità altissime, succedono cose sorprendenti:\n\n- **Dilatazione del tempo**: Se viaggi molto velocemente, il tempo per te scorre più lentamente rispetto a chi sta fermo. Ad esempio, un orologio su un'astronave veloce \"batte\" più lentamente.\n- **Contrazione delle lunghezze**: Un oggetto che si muove molto velocemente appare più corto nella direzione in cui si muove, visto da chi sta fermo.\n- **Relatività della simultaneità**: Due eventi che sembrano accadere nello stesso momento per una persona, possono sembrare avvenire in momenti diversi per un'altra persona che si muove rispetto alla prima.\n\n---\n\n### 4. **Perché è importante?**\nLa relatività ristretta ha cambiato il nostro modo di vedere l'universo. Ha portato a scoperte come la famosa formula **E=mc²**, che mostra che massa ed energia sono due facce della stessa medaglia.\n\n---\n\n**In sintesi:**  \nLa teoria della relatività ristretta ci dice che spazio e tempo non sono assoluti e separati, ma dipendono da come ci muoviamo. Quando viaggiamo molto velocemente, il tempo e le distanze cambiano rispetto a chi sta fermo. Tutto questo perché la velocità della luce è la stessa per tutti!",
+        "model": "gpt-4.1",
+        "tokens": {
+          "prompt": 24,
+          "completion": 525,
+          "total": 549
+        },
+        "response_time": 9.491787,
+        "timestamp": "2025-06-29T19:20:49.231955+00:00"
+      }
+    }
+  ],
+  "summary": {
+    "total_tests": 10,
+    "total_score": 27.0,
+    "max_possible_score": 29.0,
+    "accuracy": 93.10344827586206,
+    "total_tokens": 3812,
+    "total_response_time": 63.903712000000006,
+    "analyzer_tokens": 6823,
+    "analyzer_response_time": 20.359882,
+    "average_response_time": 6.390371200000001,
+    "average_analyzer_response_time": 2.0359882
+  }
+}

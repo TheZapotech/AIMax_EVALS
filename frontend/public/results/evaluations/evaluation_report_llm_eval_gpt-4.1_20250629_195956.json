@@ -1,0 +1,284 @@
+{
+  "evaluation_id": "llm_eval_20250629_195937",
+  "timestamp": "2025-06-29T19:59:37.266860+00:00",
+  "provider": "openai",
+  "model": "gpt-4.1",
+  "analyzer": {
+    "provider": "openai",
+    "model": "gpt-4o"
+  },
+  "test_suite_id": "sample_basic_knowledge",
+  "results": [
+    {
+      "test_id": "exact_001",
+      "prompt": "What is the capital of France? Only the name of the city.",
+      "response": "Paris",
+      "expected": "Paris",
+      "evaluation": {
+        "score": 1.0,
+        "max_score": 1.0,
+        "evaluation_type": "exact_match",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The actual response \"Paris\" matches the expected answer \"Paris\" exactly, fulfilling the exact_match evaluation criteria.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The actual response \"Paris\" matches the expected answer \"Paris\" exactly, fulfilling the exact_match evaluation criteria.",
+          "response_time": 0.965217,
+          "tokens": {
+            "prompt": 253,
+            "completion": 31,
+            "total": 284
+          }
+        },
+        "timestamp": "2025-06-29T19:59:38.855428+00:00"
+      },
+      "category": "geography",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "Paris",
+        "model": "gpt-4.1",
+        "tokens": {
+          "prompt": 21,
+          "completion": 1,
+          "total": 22
+        },
+        "response_time": 0.60711,
+        "timestamp": "2025-06-29T19:59:37.873988+00:00"
+      }
+    },
+    {
+      "test_id": "elements_001",
+      "prompt": "List the three primary colors.",
+      "response": "The three primary colors are **red, blue, and yellow**.",
+      "expected": "red, blue, yellow",
+      "evaluation": {
+        "score": 2.0,
+        "max_score": 2.0,
+        "evaluation_type": "contains_all",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The response contains all the required words \"red,\" \"blue,\" and \"yellow,\" which are the primary colors as expected. The order and additional words do not affect the correctness based on the \"contains_all\" evaluation type.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The response contains all the required words \"red,\" \"blue,\" and \"yellow,\" which are the primary colors as expected. The order and additional words do not affect the correctness based on the \"contains_all\" evaluation type.",
+          "response_time": 1.379823,
+          "tokens": {
+            "prompt": 238,
+            "completion": 54,
+            "total": 292
+          }
+        },
+        "timestamp": "2025-06-29T19:59:40.934323+00:00"
+      },
+      "category": "general",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "The three primary colors are **red, blue, and yellow**.",
+        "model": "gpt-4.1",
+        "tokens": {
+          "prompt": 13,
+          "completion": 14,
+          "total": 27
+        },
+        "response_time": 0.676681,
+        "timestamp": "2025-06-29T19:59:39.532128+00:00"
+      }
+    },
+    {
+      "test_id": "code_001",
+      "prompt": "Write a Python function that checks if a number is even.",
+      "response": "Certainly! Here is a simple Python function to check if a number is even:\n\n```python\ndef is_even(number):\n    return number % 2 == 0\n```\n\n**Usage Example:**\n```python\nprint(is_even(4))   # Output: True\nprint(is_even(7))   # Output: False\n```\n\nThis function returns `True` if the input `number` is even, and `False` otherwise.",
+      "expected": "def is_even(n): return n % 2 == 0",
+      "evaluation": {
+        "score": 3.0,
+        "max_score": 3.0,
+        "evaluation_type": "functional_equivalence",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The actual response provides a Python function `is_even` that correctly checks if a number is even by returning `number % 2 == 0`. This is functionally equivalent to the expected answer, which uses the same logic. The response also includes a usage example that demonstrates the function's correctness, matching the expected outputs for the given inputs.",
+          "raw_response": "CORRECT: Yes\nEXPLANATION: The actual response provides a Python function `is_even` that correctly checks if a number is even by returning `number % 2 == 0`. This is functionally equivalent to the expected answer, which uses the same logic. The response also includes a usage example that demonstrates the function's correctness, matching the expected outputs for the given inputs.",
+          "response_time": 1.705529,
+          "tokens": {
+            "prompt": 354,
+            "completion": 78,
+            "total": 432
+          }
+        },
+        "timestamp": "2025-06-29T19:59:43.913740+00:00"
+      },
+      "category": "programming",
+      "difficulty": "medium",
+      "llm_metrics": {
+        "content": "Certainly! Here is a simple Python function to check if a number is even:\n\n```python\ndef is_even(number):\n    return number % 2 == 0\n```\n\n**Usage Example:**\n```python\nprint(is_even(4))   # Output: True\nprint(is_even(7))   # Output: False\n```\n\nThis function returns `True` if the input `number` is even, and `False` otherwise.",
+        "model": "gpt-4.1",
+        "tokens": {
+          "prompt": 19,
+          "completion": 91,
+          "total": 110
+        },
+        "response_time": 1.258071,
+        "timestamp": "2025-06-29T19:59:42.192441+00:00"
+      }
+    },
+    {
+      "test_id": "tf_001",
+      "prompt": "True or False only: Water boils at 100 degrees Celsius at sea level.",
+      "response": "True",
+      "expected": "true",
+      "evaluation": {
+        "score": 1.0,
+        "max_score": 1.0,
+        "evaluation_type": "exact_match",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The actual response \"True\" matches the expected answer \"true\" in meaning, and the evaluation type \"exact_match\" allows for case insensitivity. Therefore, the response is correct.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The actual response \"True\" matches the expected answer \"true\" in meaning, and the evaluation type \"exact_match\" allows for case insensitivity. Therefore, the response is correct.",
+          "response_time": 1.256303,
+          "tokens": {
+            "prompt": 255,
+            "completion": 46,
+            "total": 301
+          }
+        },
+        "timestamp": "2025-06-29T19:59:45.771841+00:00"
+      },
+      "category": "science",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "True",
+        "model": "gpt-4.1",
+        "tokens": {
+          "prompt": 23,
+          "completion": 1,
+          "total": 24
+        },
+        "response_time": 0.587544,
+        "timestamp": "2025-06-29T19:59:44.501303+00:00"
+      }
+    },
+    {
+      "test_id": "key_001",
+      "prompt": "Explain the concept of photosynthesis. Include: sunlight, chlorophyll, and glucose.",
+      "response": "Photosynthesis is the process by which green plants, algae, and some bacteria make their own food. It happens mainly in the leaves, inside cells that contain a green pigment called **chlorophyll**. \n\nHere’s how it works:\n\n1. **Sunlight** provides the energy needed for photosynthesis. Plants absorb sunlight using chlorophyll.\n2. **Chlorophyll** captures the light energy and uses it to change carbon dioxide (from the air) and water (from the soil) into glucose.\n3. **Glucose** is a simple sugar that plants use as food for energy and growth. Oxygen is also produced and released into the air as a byproduct.\n\nThe overall equation for photosynthesis is:  \n**Carbon dioxide + Water + Sunlight → Glucose + Oxygen**\n\nOr, in symbols:  \n**6CO₂ + 6H₂O + light energy → C₆H₁₂O₆ + 6O₂**\n\nIn summary, photosynthesis uses sunlight, chlorophyll, and raw materials to create glucose, which sustains the plant and provides energy for other living things.",
+      "expected": "sunlight, chlorophyll, glucose",
+      "evaluation": {
+        "score": 3.0,
+        "max_score": 3.0,
+        "evaluation_type": "key_elements",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The response correctly includes all the key elements: sunlight, chlorophyll, and glucose, and accurately explains their roles in the process of photosynthesis. The explanation demonstrates a clear understanding of how these elements interact to produce glucose, fulfilling the requirements of the question.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The response correctly includes all the key elements: sunlight, chlorophyll, and glucose, and accurately explains their roles in the process of photosynthesis. The explanation demonstrates a clear understanding of how these elements interact to produce glucose, fulfilling the requirements of the question.",
+          "response_time": 1.658974,
+          "tokens": {
+            "prompt": 478,
+            "completion": 60,
+            "total": 538
+          }
+        },
+        "timestamp": "2025-06-29T19:59:51.981827+00:00"
+      },
+      "category": "science",
+      "difficulty": "medium",
+      "llm_metrics": {
+        "content": "Photosynthesis is the process by which green plants, algae, and some bacteria make their own food. It happens mainly in the leaves, inside cells that contain a green pigment called **chlorophyll**. \n\nHere’s how it works:\n\n1. **Sunlight** provides the energy needed for photosynthesis. Plants absorb sunlight using chlorophyll.\n2. **Chlorophyll** captures the light energy and uses it to change carbon dioxide (from the air) and water (from the soil) into glucose.\n3. **Glucose** is a simple sugar that plants use as food for energy and growth. Oxygen is also produced and released into the air as a byproduct.\n\nThe overall equation for photosynthesis is:  \n**Carbon dioxide + Water + Sunlight → Glucose + Oxygen**\n\nOr, in symbols:  \n**6CO₂ + 6H₂O + light energy → C₆H₁₂O₆ + 6O₂**\n\nIn summary, photosynthesis uses sunlight, chlorophyll, and raw materials to create glucose, which sustains the plant and provides energy for other living things.",
+        "model": "gpt-4.1",
+        "tokens": {
+          "prompt": 24,
+          "completion": 225,
+          "total": 249
+        },
+        "response_time": 4.528523,
+        "timestamp": "2025-06-29T19:59:50.300383+00:00"
+      }
+    },
+    {
+      "test_id": "regex_001",
+      "prompt": "Write a valid email address of a user called john doe working at example.com. Nothing else.",
+      "response": "john.doe@example.com",
+      "expected": "john.doe@example.com",
+      "evaluation": {
+        "score": 2.0,
+        "max_score": 2.0,
+        "evaluation_type": "exact_match",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The actual response \"john.doe@example.com\" matches the expected answer exactly, fulfilling the criteria for an exact match evaluation.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The actual response \"john.doe@example.com\" matches the expected answer exactly, fulfilling the criteria for an exact match evaluation.",
+          "response_time": 1.207829,
+          "tokens": {
+            "prompt": 315,
+            "completion": 34,
+            "total": 349
+          }
+        },
+        "timestamp": "2025-06-29T19:59:53.832076+00:00"
+      },
+      "category": "general",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "john.doe@example.com",
+        "model": "gpt-4.1",
+        "tokens": {
+          "prompt": 26,
+          "completion": 5,
+          "total": 31
+        },
+        "response_time": 0.620178,
+        "timestamp": "2025-06-29T19:59:52.602029+00:00"
+      }
+    },
+    {
+      "test_id": "multi_001",
+      "prompt": "Which of these is a mammal? A) Snake B) Eagle C) Dolphin D) Lizard",
+      "response": "The correct answer is: **C) Dolphin**.\n\nDolphins are mammals.",
+      "expected": "C",
+      "evaluation": {
+        "score": 1.0,
+        "max_score": 1.0,
+        "evaluation_type": "contains_word",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The response contains the word \"Dolphin\" as specified in the hint, and it correctly identifies \"C) Dolphin\" as the mammal among the options. This satisfies the \"contains_word\" evaluation type and aligns with the expected answer.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The response contains the word \"Dolphin\" as specified in the hint, and it correctly identifies \"C) Dolphin\" as the mammal among the options. This satisfies the \"contains_word\" evaluation type and aligns with the expected answer.",
+          "response_time": 1.864818,
+          "tokens": {
+            "prompt": 210,
+            "completion": 58,
+            "total": 268
+          }
+        },
+        "timestamp": "2025-06-29T19:59:56.792082+00:00"
+      },
+      "category": "biology",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "The correct answer is: **C) Dolphin**.\n\nDolphins are mammals.",
+        "model": "gpt-4.1",
+        "tokens": {
+          "prompt": 28,
+          "completion": 17,
+          "total": 45
+        },
+        "response_time": 1.074528,
+        "timestamp": "2025-06-29T19:59:54.906647+00:00"
+      }
+    }
+  ],
+  "summary": {
+    "total_tests": 7,
+    "total_score": 13.0,
+    "max_possible_score": 13.0,
+    "accuracy": 100.0,
+    "total_tokens": 508,
+    "total_response_time": 9.352635,
+    "analyzer_tokens": 2464,
+    "analyzer_response_time": 10.038492999999999,
+    "average_response_time": 1.3360907142857141,
+    "average_analyzer_response_time": 1.4340704285714285
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "evaluation_id": "eval_20250629_181501",
+  "timestamp": "2025-06-29T18:15:01.879034+00:00",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "test_suite_id": "sample_basic_knowledge",
+  "results": [
+    {
+      "test_id": "exact_001",
+      "prompt": "What is the capital of France?",
+      "response": "The capital of France is Paris.",
+      "expected": "Paris",
+      "evaluation": {
+        "score": 1.0,
+        "max_score": 1.0,
+        "evaluation_type": "exact_match",
+        "hint_evaluation": {
+          "passed": true,
+          "details": "Response contains required word 'paris'",
+          "timestamp": "2025-06-29T18:15:02.700313+00:00"
+        },
+        "timestamp": "2025-06-29T18:15:02.700342+00:00"
+      },
+      "category": "geography",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "The capital of France is Paris.",
+        "model": "gpt-4o-mini",
+        "tokens": {
+          "prompt": 14,
+          "completion": 7,
+          "total": 21
+        },
+        "response_time": 0.821164,
+        "timestamp": "2025-06-29T18:15:02.700221+00:00"
+      }
+    },
+    {
+      "test_id": "elements_001",
+      "prompt": "List the three primary colors.",
+      "response": "The three primary colors are red, blue, and yellow.",
+      "expected": "red, blue, yellow",
+      "evaluation": {
+        "score": 2.0,
+        "max_score": 2.0,
+        "evaluation_type": "contains_all",
+        "hint_evaluation": {
+          "passed": true,
+          "details": "All required words found",
+          "missing_words": [],
+          "timestamp": "2025-06-29T18:15:03.490835+00:00"
+        },
+        "timestamp": "2025-06-29T18:15:03.490873+00:00"
+      },
+      "category": "general",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "The three primary colors are red, blue, and yellow.",
+        "model": "gpt-4o-mini",
+        "tokens": {
+          "prompt": 13,
+          "completion": 12,
+          "total": 25
+        },
+        "response_time": 0.79034,
+        "timestamp": "2025-06-29T18:15:03.490706+00:00"
+      }
+    },
+    {
+      "test_id": "code_001",
+      "prompt": "Write a Python function that checks if a number is even.",
+      "response": "Certainly! Below is a simple Python function that checks if a number is even:\n\n```python\ndef is_even(number):\n    \"\"\"Check if a number is even.\"\"\"\n    return number % 2 == 0\n\n# Example usage:\nprint(is_even(4))  # Output: True\nprint(is_even(7))  # Output: False\n```\n\nThis function takes an integer `number` as input and returns `True` if the number is even, and `False` otherwise. The condition `number % 2 == 0` checks if the remainder when `number` is divided by 2 is zero, which is the definition of an even number.",
+      "expected": "def is_even(n): return n % 2 == 0",
+      "evaluation": {
+        "score": 1.5,
+        "max_score": 3.0,
+        "evaluation_type": "functional_equivalence",
+        "hint_evaluation": {
+          "passed": true,
+          "details": "Code contains basic Python syntax: ['def', 'return', 'if', '(', ')', ':', '=', '==']",
+          "timestamp": "2025-06-29T18:15:07.371736+00:00"
+        },
+        "timestamp": "2025-06-29T18:15:07.371755+00:00"
+      },
+      "category": "programming",
+      "difficulty": "medium",
+      "llm_metrics": {
+        "content": "Certainly! Below is a simple Python function that checks if a number is even:\n\n```python\ndef is_even(number):\n    \"\"\"Check if a number is even.\"\"\"\n    return number % 2 == 0\n\n# Example usage:\nprint(is_even(4))  # Output: True\nprint(is_even(7))  # Output: False\n```\n\nThis function takes an integer `number` as input and returns `True` if the number is even, and `False` otherwise. The condition `number % 2 == 0` checks if the remainder when `number` is divided by 2 is zero, which is the definition of an even number.",
+        "model": "gpt-4o-mini",
+        "tokens": {
+          "prompt": 19,
+          "completion": 136,
+          "total": 155
+        },
+        "response_time": 3.880756,
+        "timestamp": "2025-06-29T18:15:07.371660+00:00"
+      }
+    },
+    {
+      "test_id": "tf_001",
+      "prompt": "True or False only: Water boils at 100 degrees Celsius at sea level.",
+      "response": "True.",
+      "expected": "true",
+      "evaluation": {
+        "score": 0.0,
+        "max_score": 1.0,
+        "evaluation_type": "exact_match",
+        "hint_evaluation": {
+          "passed": true,
+          "details": "Response contains required word 'true'",
+          "timestamp": "2025-06-29T18:15:07.970841+00:00"
+        },
+        "timestamp": "2025-06-29T18:15:07.970870+00:00"
+      },
+      "category": "science",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "True.",
+        "model": "gpt-4o-mini",
+        "tokens": {
+          "prompt": 23,
+          "completion": 2,
+          "total": 25
+        },
+        "response_time": 0.598974,
+        "timestamp": "2025-06-29T18:15:07.970741+00:00"
+      }
+    },
+    {
+      "test_id": "key_001",
+      "prompt": "Explain the concept of photosynthesis. Include: sunlight, chlorophyll, and glucose.",
+      "response": "Photosynthesis is a vital biological process that enables plants, algae, and some bacteria to convert light energy from the sun into chemical energy stored in glucose, a type of sugar. This process is fundamental to life on Earth, as it provides the primary source of energy for nearly all living organisms, either directly or indirectly.\n\n### Key Components of Photosynthesis:\n\n1. **Sunlight**: The energy source for photosynthesis is sunlight. Plants capture sunlight using their leaves, which contain special pigments that absorb light. The sunlight provides the energy needed to drive the chemical reactions involved in photosynthesis.\n\n2. **Chlorophyll**: This is the green pigment found in the chloroplasts of plant cells. Chlorophyll plays a crucial role in photosynthesis by absorbing light, primarily in the blue and red wavelengths, while reflecting green light, which is why plants appear green. The absorbed light energy is used to excite electrons, initiating the series of reactions that lead to the production of glucose.\n\n3. **Glucose**: The end product of photosynthesis is glucose (C6H12O6), a simple sugar that serves as an energy source for plants and, ultimately, for other organisms that consume plants. Glucose can be used immediately by the plant for energy or can be converted into starch for storage.\n\n### The Photosynthesis Process:\n\nPhotosynthesis occurs mainly in two stages: the light-dependent reactions and the light-independent reactions (Calvin cycle).\n\n- **Light-Dependent Reactions**: These reactions take place in the thylakoid membranes of the chloroplasts. When chlorophyll absorbs sunlight, it energizes electrons, which are then used to split water molecules (H2O) into oxygen (O2), protons, and electrons. This process releases oxygen as a byproduct and generates energy-rich molecules, ATP (adenosine triphosphate) and NADPH, which are essential for the next stage of photosynthesis.\n\n- **Light-Independent Reactions (Calvin Cycle)**: These reactions occur in the stroma of the chloroplasts and do not directly require light. Instead, they use the ATP and NADPH produced in the light-dependent reactions to convert carbon dioxide (CO2) from the atmosphere into glucose through a series of enzymatic reactions. \n\n### Overall Equation:\n\nThe overall simplified equation for photosynthesis is:\n\n\\[ 6CO_2 + 6H_2O + \\text{light energy} \\rightarrow C_6H_{12}O_6 + 6O_2 \\]\n\nThis means that six molecules of carbon dioxide and six molecules of water, using light energy, are transformed into one molecule of glucose and six molecules of oxygen.\n\nIn summary, photosynthesis is a crucial process that converts sunlight into chemical energy in the form of glucose, enabling plants to grow and serve as the foundation of food chains across ecosystems.",
+      "expected": "sunlight, chlorophyll, glucose",
+      "evaluation": {
+        "score": 3.0,
+        "max_score": 3.0,
+        "evaluation_type": "key_elements",
+        "hint_evaluation": {
+          "passed": true,
+          "details": "All required words found",
+          "missing_words": [],
+          "timestamp": "2025-06-29T18:15:17.393553+00:00"
+        },
+        "timestamp": "2025-06-29T18:15:17.393570+00:00"
+      },
+      "category": "science",
+      "difficulty": "medium",
+      "llm_metrics": {
+        "content": "Photosynthesis is a vital biological process that enables plants, algae, and some bacteria to convert light energy from the sun into chemical energy stored in glucose, a type of sugar. This process is fundamental to life on Earth, as it provides the primary source of energy for nearly all living organisms, either directly or indirectly.\n\n### Key Components of Photosynthesis:\n\n1. **Sunlight**: The energy source for photosynthesis is sunlight. Plants capture sunlight using their leaves, which contain special pigments that absorb light. The sunlight provides the energy needed to drive the chemical reactions involved in photosynthesis.\n\n2. **Chlorophyll**: This is the green pigment found in the chloroplasts of plant cells. Chlorophyll plays a crucial role in photosynthesis by absorbing light, primarily in the blue and red wavelengths, while reflecting green light, which is why plants appear green. The absorbed light energy is used to excite electrons, initiating the series of reactions that lead to the production of glucose.\n\n3. **Glucose**: The end product of photosynthesis is glucose (C6H12O6), a simple sugar that serves as an energy source for plants and, ultimately, for other organisms that consume plants. Glucose can be used immediately by the plant for energy or can be converted into starch for storage.\n\n### The Photosynthesis Process:\n\nPhotosynthesis occurs mainly in two stages: the light-dependent reactions and the light-independent reactions (Calvin cycle).\n\n- **Light-Dependent Reactions**: These reactions take place in the thylakoid membranes of the chloroplasts. When chlorophyll absorbs sunlight, it energizes electrons, which are then used to split water molecules (H2O) into oxygen (O2), protons, and electrons. This process releases oxygen as a byproduct and generates energy-rich molecules, ATP (adenosine triphosphate) and NADPH, which are essential for the next stage of photosynthesis.\n\n- **Light-Independent Reactions (Calvin Cycle)**: These reactions occur in the stroma of the chloroplasts and do not directly require light. Instead, they use the ATP and NADPH produced in the light-dependent reactions to convert carbon dioxide (CO2) from the atmosphere into glucose through a series of enzymatic reactions. \n\n### Overall Equation:\n\nThe overall simplified equation for photosynthesis is:\n\n\\[ 6CO_2 + 6H_2O + \\text{light energy} \\rightarrow C_6H_{12}O_6 + 6O_2 \\]\n\nThis means that six molecules of carbon dioxide and six molecules of water, using light energy, are transformed into one molecule of glucose and six molecules of oxygen.\n\nIn summary, photosynthesis is a crucial process that converts sunlight into chemical energy in the form of glucose, enabling plants to grow and serve as the foundation of food chains across ecosystems.",
+        "model": "gpt-4o-mini",
+        "tokens": {
+          "prompt": 24,
+          "completion": 579,
+          "total": 603
+        },
+        "response_time": 9.422569,
+        "timestamp": "2025-06-29T18:15:17.393463+00:00"
+      }
+    },
+    {
+      "test_id": "regex_001",
+      "prompt": "Write a valid email address of a user called john doe working at example.com. Nothing else.",
+      "response": "john.doe@example.com",
+      "expected": "john.doe@example.com",
+      "evaluation": {
+        "score": 2.0,
+        "max_score": 2.0,
+        "evaluation_type": "exact_match",
+        "hint_evaluation": {
+          "passed": true,
+          "details": "Found matches: ['john.doe@example.com']",
+          "matches": [
+            "john.doe@example.com"
+          ],
+          "timestamp": "2025-06-29T18:15:18.519949+00:00"
+        },
+        "timestamp": "2025-06-29T18:15:18.519967+00:00"
+      },
+      "category": "general",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "john.doe@example.com",
+        "model": "gpt-4o-mini",
+        "tokens": {
+          "prompt": 26,
+          "completion": 5,
+          "total": 31
+        },
+        "response_time": 1.126308,
+        "timestamp": "2025-06-29T18:15:18.519889+00:00"
+      }
+    },
+    {
+      "test_id": "multi_001",
+      "prompt": "Which of these is a mammal? A) Snake B) Eagle C) Dolphin D) Lizard",
+      "response": "C) Dolphin is a mammal.",
+      "expected": "C",
+      "evaluation": {
+        "score": 0.0,
+        "max_score": 1.0,
+        "evaluation_type": "contains_word",
+        "hint_evaluation": {
+          "passed": false,
+          "details": "Response does not contain required word 'Dolphin or C'",
+          "timestamp": "2025-06-29T18:15:19.261343+00:00"
+        },
+        "timestamp": "2025-06-29T18:15:19.261387+00:00"
+      },
+      "category": "biology",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "C) Dolphin is a mammal.",
+        "model": "gpt-4o-mini",
+        "tokens": {
+          "prompt": 28,
+          "completion": 8,
+          "total": 36
+        },
+        "response_time": 0.741128,
+        "timestamp": "2025-06-29T18:15:19.261107+00:00"
+      }
+    }
+  ],
+  "summary": {
+    "total_tests": 7,
+    "total_score": 9.5,
+    "max_possible_score": 13.0,
+    "accuracy": 73.07692307692307,
+    "total_tokens": 896,
+    "total_response_time": 17.381239,
+    "average_response_time": 2.483034142857143
+  }
+}

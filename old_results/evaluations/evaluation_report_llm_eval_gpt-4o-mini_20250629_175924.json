@@ -1,0 +1,284 @@
+{
+  "evaluation_id": "llm_eval_20250629_175853",
+  "timestamp": "2025-06-29T17:58:53.320769+00:00",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "analyzer": {
+    "provider": "openai",
+    "model": "gpt-4o"
+  },
+  "test_suite_id": "sample_basic_knowledge",
+  "results": [
+    {
+      "test_id": "exact_001",
+      "prompt": "What is the capital of France?",
+      "response": "The capital of France is Paris.",
+      "expected": "Paris",
+      "evaluation": {
+        "score": 0.0,
+        "max_score": 1.0,
+        "evaluation_type": "exact_match",
+        "llm_evaluation": {
+          "correct": false,
+          "partial": false,
+          "explanation": "The evaluation type \"exact_match\" requires the response to match the expected answer exactly. The expected answer is \"Paris,\" but the actual response is \"The capital of France is Paris.\" This does not match exactly, so it is not correct under the exact_match criteria.",
+          "raw_response": "CORRECT: No  \nEXPLANATION: The evaluation type \"exact_match\" requires the response to match the expected answer exactly. The expected answer is \"Paris,\" but the actual response is \"The capital of France is Paris.\" This does not match exactly, so it is not correct under the exact_match criteria.",
+          "response_time": 1.501564,
+          "tokens": {
+            "prompt": 251,
+            "completion": 63,
+            "total": 314
+          }
+        },
+        "timestamp": "2025-06-29T17:58:55.455963+00:00"
+      },
+      "category": "geography",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "The capital of France is Paris.",
+        "model": "gpt-4o-mini",
+        "tokens": {
+          "prompt": 14,
+          "completion": 7,
+          "total": 21
+        },
+        "response_time": 0.605179,
+        "timestamp": "2025-06-29T17:58:53.925966+00:00"
+      }
+    },
+    {
+      "test_id": "elements_001",
+      "prompt": "List the three primary colors.",
+      "response": "The three primary colors are red, blue, and yellow. These colors cannot be created by mixing other colors together and are the foundation for creating a wide range of other colors through mixing.",
+      "expected": "red, blue, yellow",
+      "evaluation": {
+        "score": 2.0,
+        "max_score": 2.0,
+        "evaluation_type": "contains_all",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The actual response contains all the elements listed in the expected answer: \"red,\" \"blue,\" and \"yellow.\" The order does not matter, and the response includes additional correct information about primary colors, which does not detract from its correctness.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The actual response contains all the elements listed in the expected answer: \"red,\" \"blue,\" and \"yellow.\" The order does not matter, and the response includes additional correct information about primary colors, which does not detract from its correctness.",
+          "response_time": 1.528459,
+          "tokens": {
+            "prompt": 261,
+            "completion": 58,
+            "total": 319
+          }
+        },
+        "timestamp": "2025-06-29T17:58:58.465972+00:00"
+      },
+      "category": "general",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "The three primary colors are red, blue, and yellow. These colors cannot be created by mixing other colors together and are the foundation for creating a wide range of other colors through mixing.",
+        "model": "gpt-4o-mini",
+        "tokens": {
+          "prompt": 13,
+          "completion": 37,
+          "total": 50
+        },
+        "response_time": 1.459861,
+        "timestamp": "2025-06-29T17:58:56.915865+00:00"
+      }
+    },
+    {
+      "test_id": "code_001",
+      "prompt": "Write a Python function that checks if a number is even.",
+      "response": "You can create a simple function in Python to check if a number is even by using the modulus operator `%`. Here's a function that does that:\n\n```python\ndef is_even(number):\n    \"\"\"Check if the given number is even.\"\"\"\n    return number % 2 == 0\n\n# Example usage:\nif __name__ == \"__main__\":\n    num = int(input(\"Enter a number: \"))\n    if is_even(num):\n        print(f\"{num} is even.\")\n    else:\n        print(f\"{num} is odd.\")\n```\n\nThis function takes a number as an argument and returns `True` if the number is even and `False` otherwise. The example usage allows you to test the function by entering a number.",
+      "expected": "def is_even(n): return n % 2 == 0",
+      "evaluation": {
+        "score": 3.0,
+        "max_score": 3.0,
+        "evaluation_type": "functional_equivalence",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The actual response provides a function `is_even(number)` that correctly checks if a number is even using the modulus operator `%`, which is functionally equivalent to the expected answer. The function returns `True` for even numbers and `False` for odd numbers, matching the expected behavior. The additional example usage does not affect the correctness of the function itself.",
+          "raw_response": "CORRECT: Yes\nEXPLANATION: The actual response provides a function `is_even(number)` that correctly checks if a number is even using the modulus operator `%`, which is functionally equivalent to the expected answer. The function returns `True` for even numbers and `False` for odd numbers, matching the expected behavior. The additional example usage does not affect the correctness of the function itself.",
+          "response_time": 1.825229,
+          "tokens": {
+            "prompt": 410,
+            "completion": 80,
+            "total": 490
+          }
+        },
+        "timestamp": "2025-06-29T17:59:03.046092+00:00"
+      },
+      "category": "programming",
+      "difficulty": "medium",
+      "llm_metrics": {
+        "content": "You can create a simple function in Python to check if a number is even by using the modulus operator `%`. Here's a function that does that:\n\n```python\ndef is_even(number):\n    \"\"\"Check if the given number is even.\"\"\"\n    return number % 2 == 0\n\n# Example usage:\nif __name__ == \"__main__\":\n    num = int(input(\"Enter a number: \"))\n    if is_even(num):\n        print(f\"{num} is even.\")\n    else:\n        print(f\"{num} is odd.\")\n```\n\nThis function takes a number as an argument and returns `True` if the number is even and `False` otherwise. The example usage allows you to test the function by entering a number.",
+        "model": "gpt-4o-mini",
+        "tokens": {
+          "prompt": 19,
+          "completion": 147,
+          "total": 166
+        },
+        "response_time": 2.738179,
+        "timestamp": "2025-06-29T17:59:01.204190+00:00"
+      }
+    },
+    {
+      "test_id": "tf_001",
+      "prompt": "True or False only: Water boils at 100 degrees Celsius at sea level.",
+      "response": "True.",
+      "expected": "true",
+      "evaluation": {
+        "score": 0.5,
+        "max_score": 1.0,
+        "evaluation_type": "exact_match",
+        "llm_evaluation": {
+          "correct": false,
+          "partial": true,
+          "explanation": "The response \"True.\" is a correct answer to the question, but it does not match the expected answer \"true\" exactly due to the presence of a period. The evaluation type \"exact_match\" requires an exact match, ignoring case and minor formatting, but the period is considered a deviation from the expected format.",
+          "raw_response": "CORRECT: Partial\nEXPLANATION: The response \"True.\" is a correct answer to the question, but it does not match the expected answer \"true\" exactly due to the presence of a period. The evaluation type \"exact_match\" requires an exact match, ignoring case and minor formatting, but the period is considered a deviation from the expected format.",
+          "response_time": 1.629299,
+          "tokens": {
+            "prompt": 255,
+            "completion": 72,
+            "total": 327
+          }
+        },
+        "timestamp": "2025-06-29T17:59:05.146070+00:00"
+      },
+      "category": "science",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "True.",
+        "model": "gpt-4o-mini",
+        "tokens": {
+          "prompt": 23,
+          "completion": 2,
+          "total": 25
+        },
+        "response_time": 0.449865,
+        "timestamp": "2025-06-29T17:59:03.496014+00:00"
+      }
+    },
+    {
+      "test_id": "key_001",
+      "prompt": "Explain the concept of photosynthesis. Include: sunlight, chlorophyll, and glucose.",
+      "response": "Photosynthesis is a vital biological process through which green plants, algae, and some bacteria convert light energy from the sun into chemical energy in the form of glucose. This process not only provides energy for the organisms that perform it but also produces oxygen as a byproduct, which is essential for the survival of most life forms on Earth.\n\nHere’s how photosynthesis works, incorporating the key components of sunlight, chlorophyll, and glucose:\n\n1. **Sunlight**: The process of photosynthesis begins when plants absorb sunlight through their leaves. Sunlight is composed of various wavelengths of light, including those in the visible spectrum. Plants primarily use the blue and red wavelengths for photosynthesis.\n\n2. **Chlorophyll**: Chlorophyll is the green pigment found in the chloroplasts of plant cells. It plays a crucial role in photosynthesis by absorbing sunlight. Chlorophyll captures light energy, which is then used to drive the chemical reactions that convert carbon dioxide and water into glucose.\n\n3. **Glucose**: The primary product of photosynthesis is glucose, a simple sugar that serves as an essential energy source for the plant. The general equation for photosynthesis can be summarized as follows:\n\n   \\[\n   6 \\, \\text{CO}_2 + 6 \\, \\text{H}_2\\text{O} + \\text{light energy} \\rightarrow \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6 \\, \\text{O}_2\n   \\]\n\n   In this equation, six molecules of carbon dioxide (CO₂) from the atmosphere and six molecules of water (H₂O) from the soil are converted into one molecule of glucose (C₆H₁₂O₆) and six molecules of oxygen (O₂), which are released into the atmosphere.\n\nThe process of photosynthesis occurs mainly in two stages: the light-dependent reactions and the light-independent reactions (Calvin cycle). \n\n- **Light-dependent reactions**: These occur in the thylakoid membranes of the chloroplasts and require sunlight. During these reactions, chlorophyll absorbs light energy, which is used to split water molecules, releasing oxygen and generating energy-rich molecules (ATP and NADPH).\n\n- **Light-independent reactions (Calvin cycle)**: Taking place in the stroma of the chloroplasts, these reactions do not require light directly. Instead, they use the ATP and NADPH produced in the light-dependent reactions to convert carbon dioxide into glucose through a series of enzymatic steps.\n\nIn summary, photosynthesis is a fundamental process that enables plants to convert sunlight into chemical energy, producing glucose and oxygen, which are crucial for both plant growth and sustaining life on Earth.",
+      "expected": "sunlight, chlorophyll, glucose",
+      "evaluation": {
+        "score": 3.0,
+        "max_score": 3.0,
+        "evaluation_type": "key_elements",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The response correctly includes and explains all the key elements required: sunlight, chlorophyll, and glucose. It provides a detailed description of the photosynthesis process, explaining the role of sunlight in providing energy, chlorophyll in capturing light, and glucose as the product of the process. The explanation demonstrates a clear understanding of the key concepts involved in photosynthesis.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The response correctly includes and explains all the key elements required: sunlight, chlorophyll, and glucose. It provides a detailed description of the photosynthesis process, explaining the role of sunlight in providing energy, chlorophyll in capturing light, and glucose as the product of the process. The explanation demonstrates a clear understanding of the key concepts involved in photosynthesis.",
+          "response_time": 2.442286,
+          "tokens": {
+            "prompt": 807,
+            "completion": 79,
+            "total": 886
+          }
+        },
+        "timestamp": "2025-06-29T17:59:19.885982+00:00"
+      },
+      "category": "science",
+      "difficulty": "medium",
+      "llm_metrics": {
+        "content": "Photosynthesis is a vital biological process through which green plants, algae, and some bacteria convert light energy from the sun into chemical energy in the form of glucose. This process not only provides energy for the organisms that perform it but also produces oxygen as a byproduct, which is essential for the survival of most life forms on Earth.\n\nHere’s how photosynthesis works, incorporating the key components of sunlight, chlorophyll, and glucose:\n\n1. **Sunlight**: The process of photosynthesis begins when plants absorb sunlight through their leaves. Sunlight is composed of various wavelengths of light, including those in the visible spectrum. Plants primarily use the blue and red wavelengths for photosynthesis.\n\n2. **Chlorophyll**: Chlorophyll is the green pigment found in the chloroplasts of plant cells. It plays a crucial role in photosynthesis by absorbing sunlight. Chlorophyll captures light energy, which is then used to drive the chemical reactions that convert carbon dioxide and water into glucose.\n\n3. **Glucose**: The primary product of photosynthesis is glucose, a simple sugar that serves as an essential energy source for the plant. The general equation for photosynthesis can be summarized as follows:\n\n   \\[\n   6 \\, \\text{CO}_2 + 6 \\, \\text{H}_2\\text{O} + \\text{light energy} \\rightarrow \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6 \\, \\text{O}_2\n   \\]\n\n   In this equation, six molecules of carbon dioxide (CO₂) from the atmosphere and six molecules of water (H₂O) from the soil are converted into one molecule of glucose (C₆H₁₂O₆) and six molecules of oxygen (O₂), which are released into the atmosphere.\n\nThe process of photosynthesis occurs mainly in two stages: the light-dependent reactions and the light-independent reactions (Calvin cycle). \n\n- **Light-dependent reactions**: These occur in the thylakoid membranes of the chloroplasts and require sunlight. During these reactions, chlorophyll absorbs light energy, which is used to split water molecules, releasing oxygen and generating energy-rich molecules (ATP and NADPH).\n\n- **Light-independent reactions (Calvin cycle)**: Taking place in the stroma of the chloroplasts, these reactions do not require light directly. Instead, they use the ATP and NADPH produced in the light-dependent reactions to convert carbon dioxide into glucose through a series of enzymatic steps.\n\nIn summary, photosynthesis is a fundamental process that enables plants to convert sunlight into chemical energy, producing glucose and oxygen, which are crucial for both plant growth and sustaining life on Earth.",
+        "model": "gpt-4o-mini",
+        "tokens": {
+          "prompt": 24,
+          "completion": 554,
+          "total": 578
+        },
+        "response_time": 12.27295,
+        "timestamp": "2025-06-29T17:59:17.419067+00:00"
+      }
+    },
+    {
+      "test_id": "regex_001",
+      "prompt": "Write a valid email address of a user called john doe working at example.com. Nothing else.",
+      "response": "john.doe@example.com",
+      "expected": "john.doe@example.com",
+      "evaluation": {
+        "score": 2.0,
+        "max_score": 2.0,
+        "evaluation_type": "exact_match",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The actual response \"john.doe@example.com\" matches the expected answer exactly, fulfilling the requirement for an exact match evaluation.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The actual response \"john.doe@example.com\" matches the expected answer exactly, fulfilling the requirement for an exact match evaluation.",
+          "response_time": 1.351978,
+          "tokens": {
+            "prompt": 315,
+            "completion": 34,
+            "total": 349
+          }
+        },
+        "timestamp": "2025-06-29T17:59:21.779831+00:00"
+      },
+      "category": "general",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "john.doe@example.com",
+        "model": "gpt-4o-mini",
+        "tokens": {
+          "prompt": 26,
+          "completion": 5,
+          "total": 31
+        },
+        "response_time": 0.519991,
+        "timestamp": "2025-06-29T17:59:20.406017+00:00"
+      }
+    },
+    {
+      "test_id": "multi_001",
+      "prompt": "Which of these is a mammal? A) Snake B) Eagle C) Dolphin D) Lizard",
+      "response": "C) Dolphin is a mammal.",
+      "expected": "C",
+      "evaluation": {
+        "score": 1.0,
+        "max_score": 1.0,
+        "evaluation_type": "contains_word",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The actual response contains the word \"Dolphin,\" which matches the expected answer \"C\" and confirms that Dolphin is a mammal. This satisfies the \"contains_word\" evaluation type with the specified value \"Dolphin or C.\"",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The actual response contains the word \"Dolphin,\" which matches the expected answer \"C\" and confirms that Dolphin is a mammal. This satisfies the \"contains_word\" evaluation type with the specified value \"Dolphin or C.\"",
+          "response_time": 2.229761,
+          "tokens": {
+            "prompt": 201,
+            "completion": 57,
+            "total": 258
+          }
+        },
+        "timestamp": "2025-06-29T17:59:24.688694+00:00"
+      },
+      "category": "biology",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "C) Dolphin is a mammal.",
+        "model": "gpt-4o-mini",
+        "tokens": {
+          "prompt": 28,
+          "completion": 8,
+          "total": 36
+        },
+        "response_time": 0.656051,
+        "timestamp": "2025-06-29T17:59:22.435927+00:00"
+      }
+    }
+  ],
+  "summary": {
+    "total_tests": 7,
+    "total_score": 11.5,
+    "max_possible_score": 13.0,
+    "accuracy": 88.46153846153845,
+    "total_tokens": 907,
+    "total_response_time": 18.702076,
+    "analyzer_tokens": 2943,
+    "analyzer_response_time": 12.508575999999998,
+    "average_response_time": 2.671725142857143,
+    "average_analyzer_response_time": 1.7869394285714282
+  }
+}

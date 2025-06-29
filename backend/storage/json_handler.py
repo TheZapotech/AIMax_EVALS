@@ -17,7 +17,8 @@ class JsonHandler:
         """
         self.base_path = base_path
         self.test_cases_dir = os.path.join(base_path, 'test_cases')
-        self.results_dir = os.path.join(base_path, 'results', 'evaluations')
+        # Save results to frontend/public for easy access by the dashboard
+        self.results_dir = os.path.join(base_path, 'frontend', 'public', 'results', 'evaluations')
         
         # Ensure directories exist
         os.makedirs(self.test_cases_dir, exist_ok=True)

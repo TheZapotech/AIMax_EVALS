@@ -8,6 +8,7 @@ without complex command-line arguments.
 import os
 import subprocess
 import sys
+import json
 from datetime import datetime
 
 def print_header():
@@ -33,8 +34,9 @@ def print_menu():
     print()
     print("UTILITIES:")
     print("  7. List available models and test suites")
-    print("  8. Run diagnostic tools")
-    print("  9. Compare two models (LLM-based)")
+    print("  8. Browse test suites")
+    print("  9. Run diagnostic tools")
+    print("  10. Compare two models (LLM-based)")
     print()
     print("  0. Exit")
     print()
@@ -71,6 +73,91 @@ def get_user_input(prompt, options=None):
             print("\n\nExiting...")
             sys.exit(0)
 
+def list_test_suites():
+    """List available test suites in the test_cases directory."""
+    test_cases_dir = "test_cases"
+    
+    if not os.path.exists(test_cases_dir):
+        print(f"❌ Test cases directory '{test_cases_dir}' not found!")
+        return []
+    
+    # Find all JSON files in test_cases directory
+    json_files = []
+    for file in os.listdir(test_cases_dir):
+        if file.endswith('.json'):
+            json_files.append(file)
+    
+    if not json_files:
+        print(f"❌ No test suite files found in '{test_cases_dir}'!")
+        return []
+    
+    print(f"\n📁 Available test suites in '{test_cases_dir}':")
+    print("-" * 50)
+    
+    for i, filename in enumerate(json_files, 1):
+        filepath = os.path.join(test_cases_dir, filename)
+        try:
+            # Try to read test suite info
+            with open(filepath, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                
+            suite_id = data.get('test_suite_id', 'Unknown')
+            test_count = len(data.get('test_cases', []))
+            description = data.get('description', 'No description')
+            
+            print(f"  {i}. {filename}")
+            print(f"     ID: {suite_id}")
+            print(f"     Tests: {test_count}")
+            print(f"     Description: {description}")
+            print()
+            
+        except (json.JSONDecodeError, FileNotFoundError, KeyError) as e:
+            print(f"  {i}. {filename} (⚠️ Error reading file: {e})")
+            print()
+    
+    return json_files
+
+def choose_test_suite():
+    """Let user choose a test suite from available options."""
+    test_suites = list_test_suites()
+    
+    if not test_suites:
+        return None
+    
+    while True:
+        try:
+            choice = input(f"Choose test suite (1-{len(test_suites)}) or enter filename directly: ").strip()
+            
+            # Check if it's a number
+            try:
+                choice_num = int(choice)
+                if 1 <= choice_num <= len(test_suites):
+                    return test_suites[choice_num - 1]
+                else:
+                    print(f"Please enter a number between 1 and {len(test_suites)}")
+                    continue
+            except ValueError:
+                # It's not a number, treat as filename
+                if choice.endswith('.json'):
+                    # Check if file exists
+                    if os.path.exists(os.path.join('test_cases', choice)):
+                        return choice
+                    else:
+                        print(f"❌ File '{choice}' not found in test_cases directory!")
+                        continue
+                else:
+                    # Add .json extension if not present
+                    choice_with_ext = choice + '.json'
+                    if os.path.exists(os.path.join('test_cases', choice_with_ext)):
+                        return choice_with_ext
+                    else:
+                        print(f"❌ File '{choice_with_ext}' not found in test_cases directory!")
+                        continue
+                        
+        except KeyboardInterrupt:
+            print("\n\nCancelled...")
+            return None
+
 def rule_based_evaluations():
     """Handle rule-based evaluation options."""
     print("\n--- Rule-Based Evaluations ---")
@@ -91,7 +178,10 @@ def rule_based_evaluations():
         model = get_user_input("Model name (e.g., gpt-3.5-turbo): ")
         cmd = ["python", "eval_runner.py", "--provider", provider, "--model", model]
     else:  # choice == 'c'
-        test_suite = get_user_input("Test suite filename (e.g., sample_test_suite.json): ")
+        test_suite = choose_test_suite()
+        if not test_suite:
+            print("❌ No test suite selected. Aborting.")
+            return False
         cmd = ["python", "eval_runner.py", "--test-suite", test_suite]
         
         # Optional: add specific model
@@ -123,7 +213,10 @@ def llm_based_evaluations():
         model = get_user_input("Model name (e.g., gpt-3.5-turbo): ")
         cmd = ["python", "llm_eval_runner.py", "--provider", provider, "--model", model]
     else:  # choice == 'c'
-        test_suite = get_user_input("Test suite filename (e.g., sample_test_suite.json): ")
+        test_suite = choose_test_suite()
+        if not test_suite:
+            print("❌ No test suite selected. Aborting.")
+            return False
         cmd = ["python", "llm_eval_runner.py", "--test-suite", test_suite]
         
         # Optional: add specific model
@@ -152,7 +245,13 @@ def compare_models():
     provider2 = get_user_input("Provider (openai/anthropic): ", ['openai', 'anthropic'])
     model2 = get_user_input("Model name: ")
     
-    test_suite = get_user_input("Test suite (or press Enter for default): ")
+    use_custom = get_user_input("Use custom test suite? (y/n): ", ['y', 'n', 'yes', 'no'])
+    test_suite = None
+    if use_custom.lower() in ['y', 'yes']:
+        test_suite = choose_test_suite()
+        if not test_suite:
+            print("Using default test suite...")
+            test_suite = None
     
     print(f"\nRunning comparison between {model1} and {model2}...")
     
@@ -193,7 +292,7 @@ def main():
     while True:
         print_menu()
         
-        choice = get_user_input("Enter your choice (0-9): ")
+        choice = get_user_input("Enter your choice (0-10): ")
         
         print()
         
@@ -229,6 +328,10 @@ def main():
             run_command(["python", "llm_eval_runner.py", "--list"])
             
         elif choice == '8':
+            print("📁 Browsing test suites...")
+            list_test_suites()
+            
+        elif choice == '9':
             print("🔧 Running diagnostic tools...")
             if os.path.exists('diagnose_llm_evaluator.sh'):
                 run_command(["./diagnose_llm_evaluator.sh"])
@@ -236,7 +339,7 @@ def main():
                 print("Running individual diagnostic tools...")
                 run_command(["python", "check_openai_api.py"])
                 
-        elif choice == '9':
+        elif choice == '10':
             compare_models()
             
         else:

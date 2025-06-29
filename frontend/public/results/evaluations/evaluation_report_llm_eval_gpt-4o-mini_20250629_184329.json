@@ -1,0 +1,284 @@
+{
+  "evaluation_id": "llm_eval_20250629_184302",
+  "timestamp": "2025-06-29T18:43:02.194597+00:00",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "analyzer": {
+    "provider": "openai",
+    "model": "gpt-4o"
+  },
+  "test_suite_id": "sample_basic_knowledge",
+  "results": [
+    {
+      "test_id": "exact_001",
+      "prompt": "What is the capital of France? Only the name of the city.",
+      "response": "Paris",
+      "expected": "Paris",
+      "evaluation": {
+        "score": 1.0,
+        "max_score": 1.0,
+        "evaluation_type": "exact_match",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The actual response \"Paris\" exactly matches the expected answer \"Paris\", fulfilling the criteria for an exact match.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The actual response \"Paris\" exactly matches the expected answer \"Paris\", fulfilling the criteria for an exact match.",
+          "response_time": 0.896545,
+          "tokens": {
+            "prompt": 253,
+            "completion": 31,
+            "total": 284
+          }
+        },
+        "timestamp": "2025-06-29T18:43:04.502010+00:00"
+      },
+      "category": "geography",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "Paris",
+        "model": "gpt-4o-mini",
+        "tokens": {
+          "prompt": 21,
+          "completion": 1,
+          "total": 22
+        },
+        "response_time": 1.392245,
+        "timestamp": "2025-06-29T18:43:03.586853+00:00"
+      }
+    },
+    {
+      "test_id": "elements_001",
+      "prompt": "List the three primary colors.",
+      "response": "The three primary colors are red, blue, and yellow.",
+      "expected": "red, blue, yellow",
+      "evaluation": {
+        "score": 2.0,
+        "max_score": 2.0,
+        "evaluation_type": "contains_all",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The actual response contains all the elements listed in the expected answer: \"red,\" \"blue,\" and \"yellow.\" The order of elements does not matter, and the response meets the criteria for \"contains_all\" evaluation.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The actual response contains all the elements listed in the expected answer: \"red,\" \"blue,\" and \"yellow.\" The order of elements does not matter, and the response meets the criteria for \"contains_all\" evaluation.",
+          "response_time": 1.445243,
+          "tokens": {
+            "prompt": 236,
+            "completion": 53,
+            "total": 289
+          }
+        },
+        "timestamp": "2025-06-29T18:43:07.002212+00:00"
+      },
+      "category": "general",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "The three primary colors are red, blue, and yellow.",
+        "model": "gpt-4o-mini",
+        "tokens": {
+          "prompt": 13,
+          "completion": 12,
+          "total": 25
+        },
+        "response_time": 1.0393,
+        "timestamp": "2025-06-29T18:43:05.541341+00:00"
+      }
+    },
+    {
+      "test_id": "code_001",
+      "prompt": "Write a Python function that checks if a number is even.",
+      "response": "Certainly! Below is a simple Python function that checks if a given number is even:\n\n```python\ndef is_even(number):\n    \"\"\"Check if the given number is even.\"\"\"\n    return number % 2 == 0\n\n# Example usage\nif __name__ == \"__main__\":\n    num = int(input(\"Enter a number: \"))\n    if is_even(num):\n        print(f\"{num} is even.\")\n    else:\n        print(f\"{num} is odd.\")\n```\n\nIn this function, `is_even`, we check if the number is divisible by 2 using the modulus operator (`%`). If the result is `0`, the number is even; otherwise, it is odd. You can test this function by providing different numbers as input.",
+      "expected": "def is_even(n): return n % 2 == 0",
+      "evaluation": {
+        "score": 3.0,
+        "max_score": 3.0,
+        "evaluation_type": "functional_equivalence",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The actual response provides a Python function `is_even` that correctly checks if a number is even by using the modulus operator (`%`). This implementation is functionally equivalent to the expected answer, as it will return `True` for even numbers and `False` for odd numbers. The additional code for input and output does not affect the correctness of the function itself.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The actual response provides a Python function `is_even` that correctly checks if a number is even by using the modulus operator (`%`). This implementation is functionally equivalent to the expected answer, as it will return `True` for even numbers and `False` for odd numbers. The additional code for input and output does not affect the correctness of the function itself.",
+          "response_time": 2.228269,
+          "tokens": {
+            "prompt": 415,
+            "completion": 82,
+            "total": 497
+          }
+        },
+        "timestamp": "2025-06-29T18:43:11.452423+00:00"
+      },
+      "category": "programming",
+      "difficulty": "medium",
+      "llm_metrics": {
+        "content": "Certainly! Below is a simple Python function that checks if a given number is even:\n\n```python\ndef is_even(number):\n    \"\"\"Check if the given number is even.\"\"\"\n    return number % 2 == 0\n\n# Example usage\nif __name__ == \"__main__\":\n    num = int(input(\"Enter a number: \"))\n    if is_even(num):\n        print(f\"{num} is even.\")\n    else:\n        print(f\"{num} is odd.\")\n```\n\nIn this function, `is_even`, we check if the number is divisible by 2 using the modulus operator (`%`). If the result is `0`, the number is even; otherwise, it is odd. You can test this function by providing different numbers as input.",
+        "model": "gpt-4o-mini",
+        "tokens": {
+          "prompt": 19,
+          "completion": 152,
+          "total": 171
+        },
+        "response_time": 2.199701,
+        "timestamp": "2025-06-29T18:43:09.202045+00:00"
+      }
+    },
+    {
+      "test_id": "tf_001",
+      "prompt": "True or False only: Water boils at 100 degrees Celsius at sea level.",
+      "response": "True.",
+      "expected": "true",
+      "evaluation": {
+        "score": 0.0,
+        "max_score": 1.0,
+        "evaluation_type": "exact_match",
+        "llm_evaluation": {
+          "correct": false,
+          "partial": false,
+          "explanation": "The evaluation type \"exact_match\" requires the response to match the expected answer exactly. The expected answer is \"true\" (all lowercase), but the actual response is \"True\" (capitalized). Therefore, it does not meet the exact match criteria.",
+          "raw_response": "CORRECT: No  \nEXPLANATION: The evaluation type \"exact_match\" requires the response to match the expected answer exactly. The expected answer is \"true\" (all lowercase), but the actual response is \"True\" (capitalized). Therefore, it does not meet the exact match criteria.",
+          "response_time": 1.209855,
+          "tokens": {
+            "prompt": 255,
+            "completion": 60,
+            "total": 315
+          }
+        },
+        "timestamp": "2025-06-29T18:43:13.261791+00:00"
+      },
+      "category": "science",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "True.",
+        "model": "gpt-4o-mini",
+        "tokens": {
+          "prompt": 23,
+          "completion": 2,
+          "total": 25
+        },
+        "response_time": 0.579697,
+        "timestamp": "2025-06-29T18:43:12.032154+00:00"
+      }
+    },
+    {
+      "test_id": "key_001",
+      "prompt": "Explain the concept of photosynthesis. Include: sunlight, chlorophyll, and glucose.",
+      "response": "Photosynthesis is a vital biological process through which green plants, algae, and some bacteria convert light energy into chemical energy, specifically in the form of glucose. This process primarily occurs in the chloroplasts of plant cells, where chlorophyll, a green pigment, plays a crucial role.\n\n### Key Components of Photosynthesis:\n\n1. **Sunlight**: \n   - Sunlight is the primary energy source for photosynthesis. Plants capture light energy using chlorophyll, which absorbs specific wavelengths of light, primarily in the blue and red parts of the spectrum. This energy drives the photosynthetic process.\n\n2. **Chlorophyll**:\n   - Chlorophyll is the green pigment found in the chloroplasts of plant cells. It is essential for capturing sunlight. When chlorophyll absorbs light energy, it energizes electrons within the chlorophyll molecules, initiating a series of chemical reactions that convert light energy into chemical energy.\n\n3. **Glucose**:\n   - Glucose is a simple sugar that serves as an energy source for plants and other organisms. During photosynthesis, carbon dioxide (from the air) and water (from the soil) are transformed into glucose and oxygen. The overall chemical equation for photosynthesis can be summarized as follows:\n   \n   \\[\n   6 \\, \\text{CO}_2 + 6 \\, \\text{H}_2\\text{O} + \\text{light energy} \\rightarrow \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6 \\, \\text{O}_2\n   \\]\n\n   In this equation, six molecules of carbon dioxide and six molecules of water, using light energy, are converted into one molecule of glucose and six molecules of oxygen.\n\n### Process of Photosynthesis:\n\nPhotosynthesis occurs in two main stages: the light-dependent reactions and the light-independent reactions (Calvin cycle).\n\n1. **Light-dependent Reactions**:\n   - These reactions occur in the thylakoid membranes of the chloroplasts. When chlorophyll absorbs sunlight, it energizes electrons, which are then used to split water molecules (photolysis) into oxygen and hydrogen. The oxygen is released as a byproduct, while the energized electrons move through the electron transport chain, generating ATP (adenosine triphosphate) and NADPH (nicotinamide adenine dinucleotide phosphate), which are energy carriers.\n\n2. **Light-independent Reactions (Calvin Cycle)**:\n   - These reactions take place in the stroma of the chloroplasts. The ATP and NADPH produced in the light-dependent reactions are used to convert carbon dioxide into glucose. This process involves a series of enzymatic reactions that ultimately result in the production of glucose, which can be used by the plant for energy or stored for later use.\n\n### Importance of Photosynthesis:\nPhotosynthesis is essential for life on Earth as it provides oxygen for respiration and forms the base of the food chain by producing glucose, which serves as a primary energy source for plants and, indirectly, for animals that consume them. Additionally, photosynthesis helps regulate atmospheric carbon dioxide levels, playing a crucial role in maintaining ecological balance.",
+      "expected": "sunlight, chlorophyll, glucose",
+      "evaluation": {
+        "score": 3.0,
+        "max_score": 3.0,
+        "evaluation_type": "key_elements",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The response correctly includes and explains all the key elements required by the question: sunlight, chlorophyll, and glucose. It provides a detailed explanation of how each component contributes to the process of photosynthesis, demonstrating a clear understanding of the concept.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The response correctly includes and explains all the key elements required by the question: sunlight, chlorophyll, and glucose. It provides a detailed explanation of how each component contributes to the process of photosynthesis, demonstrating a clear understanding of the concept.",
+          "response_time": 1.705736,
+          "tokens": {
+            "prompt": 894,
+            "completion": 57,
+            "total": 951
+          }
+        },
+        "timestamp": "2025-06-29T18:43:22.702019+00:00"
+      },
+      "category": "science",
+      "difficulty": "medium",
+      "llm_metrics": {
+        "content": "Photosynthesis is a vital biological process through which green plants, algae, and some bacteria convert light energy into chemical energy, specifically in the form of glucose. This process primarily occurs in the chloroplasts of plant cells, where chlorophyll, a green pigment, plays a crucial role.\n\n### Key Components of Photosynthesis:\n\n1. **Sunlight**: \n   - Sunlight is the primary energy source for photosynthesis. Plants capture light energy using chlorophyll, which absorbs specific wavelengths of light, primarily in the blue and red parts of the spectrum. This energy drives the photosynthetic process.\n\n2. **Chlorophyll**:\n   - Chlorophyll is the green pigment found in the chloroplasts of plant cells. It is essential for capturing sunlight. When chlorophyll absorbs light energy, it energizes electrons within the chlorophyll molecules, initiating a series of chemical reactions that convert light energy into chemical energy.\n\n3. **Glucose**:\n   - Glucose is a simple sugar that serves as an energy source for plants and other organisms. During photosynthesis, carbon dioxide (from the air) and water (from the soil) are transformed into glucose and oxygen. The overall chemical equation for photosynthesis can be summarized as follows:\n   \n   \\[\n   6 \\, \\text{CO}_2 + 6 \\, \\text{H}_2\\text{O} + \\text{light energy} \\rightarrow \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6 \\, \\text{O}_2\n   \\]\n\n   In this equation, six molecules of carbon dioxide and six molecules of water, using light energy, are converted into one molecule of glucose and six molecules of oxygen.\n\n### Process of Photosynthesis:\n\nPhotosynthesis occurs in two main stages: the light-dependent reactions and the light-independent reactions (Calvin cycle).\n\n1. **Light-dependent Reactions**:\n   - These reactions occur in the thylakoid membranes of the chloroplasts. When chlorophyll absorbs sunlight, it energizes electrons, which are then used to split water molecules (photolysis) into oxygen and hydrogen. The oxygen is released as a byproduct, while the energized electrons move through the electron transport chain, generating ATP (adenosine triphosphate) and NADPH (nicotinamide adenine dinucleotide phosphate), which are energy carriers.\n\n2. **Light-independent Reactions (Calvin Cycle)**:\n   - These reactions take place in the stroma of the chloroplasts. The ATP and NADPH produced in the light-dependent reactions are used to convert carbon dioxide into glucose. This process involves a series of enzymatic reactions that ultimately result in the production of glucose, which can be used by the plant for energy or stored for later use.\n\n### Importance of Photosynthesis:\nPhotosynthesis is essential for life on Earth as it provides oxygen for respiration and forms the base of the food chain by producing glucose, which serves as a primary energy source for plants and, indirectly, for animals that consume them. Additionally, photosynthesis helps regulate atmospheric carbon dioxide levels, playing a crucial role in maintaining ecological balance.",
+        "model": "gpt-4o-mini",
+        "tokens": {
+          "prompt": 24,
+          "completion": 641,
+          "total": 665
+        },
+        "response_time": 7.720727,
+        "timestamp": "2025-06-29T18:43:20.982541+00:00"
+      }
+    },
+    {
+      "test_id": "regex_001",
+      "prompt": "Write a valid email address of a user called john doe working at example.com. Nothing else.",
+      "response": "johndoe@example.com",
+      "expected": "john.doe@example.com",
+      "evaluation": {
+        "score": 0.0,
+        "max_score": 2.0,
+        "evaluation_type": "exact_match",
+        "llm_evaluation": {
+          "correct": false,
+          "partial": false,
+          "explanation": "The actual response \"johndoe@example.com\" does not exactly match the expected answer \"john.doe@example.com\". The expected answer includes a period between \"john\" and \"doe\", which is missing in the actual response. For exact_match evaluation, the response must match the expected answer exactly.",
+          "raw_response": "CORRECT: No  \nEXPLANATION: The actual response \"johndoe@example.com\" does not exactly match the expected answer \"john.doe@example.com\". The expected answer includes a period between \"john\" and \"doe\", which is missing in the actual response. For exact_match evaluation, the response must match the expected answer exactly.",
+          "response_time": 2.111989,
+          "tokens": {
+            "prompt": 316,
+            "completion": 71,
+            "total": 387
+          }
+        },
+        "timestamp": "2025-06-29T18:43:26.174535+00:00"
+      },
+      "category": "general",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "johndoe@example.com",
+        "model": "gpt-4o-mini",
+        "tokens": {
+          "prompt": 26,
+          "completion": 6,
+          "total": 32
+        },
+        "response_time": 1.339757,
+        "timestamp": "2025-06-29T18:43:24.041798+00:00"
+      }
+    },
+    {
+      "test_id": "multi_001",
+      "prompt": "Which of these is a mammal? A) Snake B) Eagle C) Dolphin D) Lizard",
+      "response": "C) Dolphin is a mammal.",
+      "expected": "C",
+      "evaluation": {
+        "score": 1.0,
+        "max_score": 1.0,
+        "evaluation_type": "contains_word",
+        "llm_evaluation": {
+          "correct": true,
+          "partial": false,
+          "explanation": "The actual response contains the word \"Dolphin,\" which matches the expected answer \"C\" and satisfies the condition of the evaluation type \"contains_word\" with the value \"Dolphin or C\" in a case-sensitive manner. Therefore, the response is correct.",
+          "raw_response": "CORRECT: Yes  \nEXPLANATION: The actual response contains the word \"Dolphin,\" which matches the expected answer \"C\" and satisfies the condition of the evaluation type \"contains_word\" with the value \"Dolphin or C\" in a case-sensitive manner. Therefore, the response is correct.",
+          "response_time": 1.892207,
+          "tokens": {
+            "prompt": 201,
+            "completion": 63,
+            "total": 264
+          }
+        },
+        "timestamp": "2025-06-29T18:43:29.511777+00:00"
+      },
+      "category": "biology",
+      "difficulty": "easy",
+      "llm_metrics": {
+        "content": "C) Dolphin is a mammal.",
+        "model": "gpt-4o-mini",
+        "tokens": {
+          "prompt": 28,
+          "completion": 8,
+          "total": 36
+        },
+        "response_time": 1.417242,
+        "timestamp": "2025-06-29T18:43:27.591785+00:00"
+      }
+    }
+  ],
+  "summary": {
+    "total_tests": 7,
+    "total_score": 10.0,
+    "max_possible_score": 13.0,
+    "accuracy": 76.92307692307693,
+    "total_tokens": 976,
+    "total_response_time": 15.688669,
+    "analyzer_tokens": 2987,
+    "analyzer_response_time": 11.489844000000002,
+    "average_response_time": 2.2412384285714286,
+    "average_analyzer_response_time": 1.641406285714286
+  }
+}

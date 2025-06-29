@@ -16,6 +16,12 @@ Key features:
 - JSON-based test cases and results
 - Comprehensive diagnostic and troubleshooting tools
 
+## Memory Notes
+
+- Evaluations JSON results will store comprehensive details about model performance, including scoring, token usage, and analyzer explanations
+- JSON results provide granular insights into each test case's evaluation metrics
+- Results files are automatically generated in the `results/evaluations/` directory
+
 ## Setup Instructions
 
 ### 1. Initial Setup
@@ -86,6 +92,24 @@ python llm_eval_runner.py --all-models --test-suite sample_test_suite.json
 python llm_eval_runner.py --provider openai --model gpt-4o-mini --quiet
 ```
 
+### Frontend Dashboard
+```bash
+# Navigate to frontend directory
+cd frontend
+
+# Install dependencies (one-time setup)
+npm install
+
+# Start development server
+npm run dev
+```
+
+The dashboard provides:
+- Interactive overview of all evaluation runs
+- Performance charts and model comparisons
+- Detailed test result analysis with LLM explanations
+- Real-time updates when new evaluations are run
+
 ### Diagnostic Tools
 ```bash
 # Check API keys and connection
@@ -136,9 +160,10 @@ python test_llm_eval.py
   - `evaluation_hint`: Optional hints to guide evaluation
 
 ### Results
-- Results saved to `results/evaluations/` in JSON format
+- Results saved to `frontend/public/results/evaluations/` in JSON format
 - Include detailed scoring, token usage, response times
 - LLM-based evaluations include analyzer explanations
+- Accessible via the web dashboard at http://localhost:3000
 
 ### Key Patterns
 - Async/await pattern used throughout for LLM API calls

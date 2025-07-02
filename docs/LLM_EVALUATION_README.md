@@ -139,6 +139,8 @@ EXPLANATION: [Brief explanation of your evaluation]
 
 The analyzer then provides a structured response that the system parses to determine the score.
 
+It's important to note that the `EVALUATION TYPE` field in the prompt sent to the analyzer LLM is taken directly from your test case configuration. The system supports several evaluation types, including `exact_match`, `contains_all`, `key_elements`, `functional_equivalence`, `contains_word`, and a more advanced `llm_judge` type for nuanced evaluations. Each type may include specific instructions for the analyzer. For detailed information on configuring these types, please see the `docs/TEST_CASE_CONFIGURATION_GUIDE.md`.
+
 ## Results Format
 
 Results are saved in JSON format:

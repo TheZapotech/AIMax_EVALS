@@ -195,6 +195,10 @@ Test cases are defined in JSON files. Here's a simple example:
    - Partial credit available
    - Good for explanations/definitions
 
+5. `llm_judge`
+   - Leverages the analyzer LLM for nuanced, subjective evaluations (e.g., translations, creative content, complex explanations).
+   - See `docs/TEST_CASE_CONFIGURATION_GUIDE.md` for more details.
+
 ### Evaluation Hints
 
 Hints help guide the automated evaluation:

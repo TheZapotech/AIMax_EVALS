@@ -182,6 +182,45 @@ Checks if response contains a specific word or phrase.
 }
 ```
 
+### 6. `llm_judge`
+
+This evaluation type leverages the configured analyzer LLM to perform a more nuanced, human-like judgment of the response. It's best suited for subjective evaluations, creative tasks, translations, or complex explanations where strict rule-based matching is inadequate.
+
+**Use for:**
+- Assessing the semantic meaning and contextual appropriateness of a response.
+- Evaluating translations for accuracy of meaning rather than exact phrasing.
+- Judging the quality of explanations or summaries.
+- Evaluating responses to creative or open-ended prompts.
+- Situations where you want the analyzer LLM to have more discretion in determining correctness.
+
+**Behavior:**
+- The analyzer LLM is instructed to use its natural language understanding to determine if the response adequately answers the question.
+- It considers semantic meaning, context, and appropriateness, rather than relying on exact matching of keywords or structure (unless guided by hints).
+- The `expected` answer in the test case is still provided to the analyzer LLM as context or a reference point.
+- Evaluation hints can still be used to provide further guidance to the analyzer.
+- The analyzer is instructed to allow for partial credit for responses that are partially correct or demonstrate some understanding.
+- Minor grammatical errors or stylistic differences might be ignored if the core meaning is correct.
+- The analyzer is still expected to output its judgment in the standard `CORRECT: [Yes/No/Partial]` and `EXPLANATION: [...]` format.
+
+**Example:**
+```json
+{
+  "test_id": "translation_quality_001",
+  "prompt": "Translate this English sentence to French: 'The quick brown fox jumps over the lazy dog.'",
+  "expected": "Le vif renard brun saute par-dessus le chien paresseux.",
+  "evaluation_type": "llm_judge",
+  "category": "language",
+  "difficulty": "medium",
+  "weight": 2.0,
+  "evaluation_hint": {
+    "type": "contains_all_words",
+    "values": ["renard", "saute", "chien"],
+    "case_sensitive": false,
+    "description": "Ensures key nouns and verbs are present in the translation, but overall quality judged by LLM."
+  }
+}
+```
+
 ## Evaluation Hints
 
 Hints provide additional guidance for both rule-based and LLM-based evaluation.
@@ -346,6 +385,7 @@ Based on the evaluation type "key_elements", determine if the response is:
 - **`functional_equivalence`**: Code problems
 - **`key_elements`**: Explanations requiring specific concepts
 - **`contains_word`**: Flexible matching needs
+- **`llm_judge`**: Subjective or nuanced evaluations requiring semantic understanding (translations, creative tasks, complex explanations)
 
 ### 2. Weight Questions Appropriately
 
@@ -503,7 +543,7 @@ Visit `http://localhost:3000` to see:
    - Use a JSON validator
 
 2. **Evaluation Type Not Working**
-   - Ensure evaluation type is one of: `exact_match`, `contains_all`, `functional_equivalence`, `key_elements`, `contains_word`
+   - Ensure evaluation type is one of: `exact_match`, `contains_all`, `functional_equivalence`, `key_elements`, `contains_word`, `llm_judge`
    - Check spelling and case sensitivity
 
 3. **Hints Not Working as Expected**
